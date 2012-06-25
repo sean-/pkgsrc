@@ -5,4 +5,5 @@ RMD160 (haproxy-1.6.4.tar.gz) = 955c11358efe1cc2a47d705d5c8f0ca3d3056f3e
 SHA512 (haproxy-1.6.4.tar.gz) = 9f0fc316100e312a0c35c0706895b0e57634ad6ef353c33e958bbebce445855a057a0d7dabd67f3c15126843f40ab13d436ab9544b9793de4623b59d1bc91c52
 Size (haproxy-1.6.4.tar.gz) = 1559276 bytes
 SHA1 (patch-Makefile) = 5618e5a15c710267b06756d529486acfdb831e5f
+SHA1 (patch-examples_haproxy.cfg) = c0ccbe06ce64256d9bb4229796bd336fed61d7a7
 SHA1 (patch-include_common_standard.h) = cc4b46e4923447a2d5d95cff2f241981ed77ad1d
