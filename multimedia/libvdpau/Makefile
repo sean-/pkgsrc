@@ -12,6 +12,7 @@ COMMENT=	Video Decode and Presentation API for Unix
 LICENSE=	mit
 
 USE_LIBTOOL=		yes
+USE_MULTIARCH=		lib
 USE_TOOLS+=		pkg-config gmake
 USE_LANGUAGES=		c c++
 GNU_CONFIGURE=		yes
