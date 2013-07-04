@@ -15,6 +15,7 @@ LICENSE=	mit
 BUILD_DEPENDS+=	libxslt-[0-9]*:../../textproc/libxslt
 
 USE_LANGUAGES=	c c++
+USE_MULTIARCH=	lib
 
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DMAN_INSTALL_DIR:PATH=${PKGMANDIR}/man1
