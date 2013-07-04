@@ -245,6 +245,11 @@ LOWER_VENDOR?=		hp
 LOWER_VENDOR?=		sun
 LOWER_OPSYS?=		solaris
 LOWER_OPSYS_VERSUFFIX=	2.${OS_VERSION:C/5.//}
+# XXX: Required for multiarch, there's no good workaround.  Building bmake as
+# USE_MULTIARCH=bin and setting _MAKE accordingly still results in failures.
+MACHINE_ARCH.32=	i386
+MACHINE_ARCH.64=	x86_64
+MACHINE_ARCH=		${MACHINE_ARCH.${ABI}}
 _UNAME_V!=		${UNAME} -v
 .  if !empty(_UNAME_V:Mjoyent_*)
 OS_VARIANT=		SmartOS
