@@ -1,4 +1,4 @@
-# $NetBSD: rubyversion.mk,v 1.143.2.2 2015/09/03 18:49:44 tron Exp $
+# $NetBSD: rubyversion.mk,v 1.151 2015/12/16 16:00:40 taca Exp $
 #
 
 # This file determines which Ruby version is used as a dependency for
@@ -228,7 +228,7 @@ RUBY21_VERSION=		2.1.7
 # patch
 RUBY18_PATCHLEVEL=	pl374
 RUBY193_PATCHLEVEL=	p551
-RUBY200_PATCHLEVEL=	p647
+RUBY200_PATCHLEVEL=	p648
 #RUBY21_PATCHLEVEL=	p336
 
 # current API compatible version; used for version of shared library
