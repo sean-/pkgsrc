@@ -25,6 +25,8 @@ CONFIGURE_ARGS+=	-no-sql-sqlite
 # kdelibs4 requires openssl support!
 CONFIGURE_ARGS+=	-openssl-linked
 
+CONFIGURE_ARGS+=	-iconv
+
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
 CXXFLAGS+=	-std=c++11 -Wno-c++11-narrowing
@@ -150,6 +152,7 @@ do-install:
 .include "../../x11/libXrandr/buildlink3.mk"
 .endif
 
+.include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../fonts/fontconfig/buildlink3.mk"
 .include "../../graphics/freetype2/buildlink3.mk"
