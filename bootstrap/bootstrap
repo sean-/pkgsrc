@@ -1245,9 +1245,9 @@ if test -n "$XARGS"; then
 	echo "TOOLS_PLATFORM.xargs?=		$XARGS" >> ${BOOTSTRAP_MKCONF}
 fi
 if test -n "$CFLAGS"; then
-	echo "CFLAGS+=		$CFLAGS" >> ${TARGET_MKCONF}
-	echo "DBG=			# prevent DBG from adding default optimizer flags" >> ${TARGET_MKCONF}
-	echo "DBG=			# prevent DBG from adding default optimizer flags" >> ${BOOTSTRAP_MKCONF}
+	: echo "CFLAGS+=		$CFLAGS" >> ${TARGET_MKCONF}
+	: echo "DBG=			# prevent DBG from adding default optimizer flags" >> ${TARGET_MKCONF}
+	: echo "DBG=			# prevent DBG from adding default optimizer flags" >> ${BOOTSTRAP_MKCONF}
 fi
 if test -n "$CPPFLAGS"; then
 	echo "CPPFLAGS+=		$CPPFLAGS" >> ${TARGET_MKCONF}
