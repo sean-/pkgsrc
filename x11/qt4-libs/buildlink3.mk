@@ -18,6 +18,7 @@ PTHREAD_OPTS+=	require
 
 .include "../../mk/bsd.fast.prefs.mk"
 
+.include "../../converters/libiconv/buildlink3.mk"
 .include "../../fonts/fontconfig/buildlink3.mk"
 .include "../../graphics/freetype2/buildlink3.mk"
 .include "../../mk/jpeg.buildlink3.mk"
