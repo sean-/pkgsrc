@@ -94,7 +94,7 @@ do-test:
 #	for f in compiler.pure.lisp interface.pure.lisp compiler.impure.lisp debug.impure.lisp interface.impure.lisp; do mv ${WRKSRC}/tests/$$f ${WRKSRC}/tests/$$f.off || :; done
 	cd ${WRKSRC}/tests && ${SH} ./run-tests.sh
 
-.if $(LOWER_ARCH) == "amd64" || $(LOWER_ARCH) == "x86_64"
+.if ${MACHINE_ARCH} == "x86_64"
 PLIST_SUBST+=	SUFX64=-64
 .else
 PLIST_SUBST+=	SUFX64=

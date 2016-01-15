@@ -14,7 +14,7 @@ CRYPTO=		YES
 
 .include "../../mk/bsd.prefs.mk"
 
-.if ${LOWER_ARCH} == "i386" && ${OBJECT_FMT} == "ELF"
+.if ${MACHINE_ARCH} == "i386" && ${OBJECT_FMT} == "ELF"
 BF_ENC=asm/bx86-elf.o
 .else
 BF_ENC=bf_enc.o

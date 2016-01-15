@@ -40,7 +40,9 @@ CC=			gcc
 
 .if ${OPSYS} == "SunOS"
 .  if ${MACHINE_ARCH} == "sparc"
-OPENSSL_MACHINE_ARCH=	${SPARC_TARGET_ARCH}
+OPENSSL_MACHINE_ARCH=	sparcv7
+.  elif ${MACHINE_ARCH} == "sparc64"
+OPENSSL_MACHINE_ARCH=	sparcv9
 .  elif ${MACHINE_ARCH} == "i386"
 OPENSSL_MACHINE_ARCH=	x86
 .  elif ${MACHINE_ARCH} == "x86_64"

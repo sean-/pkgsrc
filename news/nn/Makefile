@@ -30,7 +30,7 @@ MFILE=		m-i80386.h
 .elif ${MACHINE_ARCH} == "mipseb"
 MFILE=         m-mipsel.h
 .else
-MFILE=		m-${LOWER_ARCH}.h
+MFILE=		m-${MACHINE_ARCH}.h
 .endif
 
 .if ${OPSYS} == "IRIX"

@@ -28,6 +28,7 @@ INSTALLATION_DIRS=	bin ${PKGMANDIR}/cat1 ${PKGMANDIR}/man1
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--with-default-sys-path=${makesyspath}
+CONFIGURE_ARGS+=	--with-machine_arch=${MACHINE_ARCH}
 CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
 
 .include "../../mk/bsd.prefs.mk"
@@ -40,9 +41,6 @@ CONFIGURE_ARGS+=	--with-defshell=${PREFIX}/bin/pdksh
 .endif
 .if ${OPSYS} == "Interix"
 MAKE_ENV+=		XDEFS=-DUSE_SELECT
-.endif
-.if ${OPSYS} == "IRIX"
-CONFIGURE_ARGS+=	--with-machine_arch=${MACHINE_ARCH}
 .endif
 
 do-extract:

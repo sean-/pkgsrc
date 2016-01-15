@@ -26,7 +26,7 @@ USE_FEATURES+=	snprintf
 CPPFLAGS+=	-DSOLARIS
 LIBS+=	-lresolv -lsocket -lnsl
 .endif
-.if ${LOWER_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "i386"
 CPPFLAGS+=	-DBYTESWAP_IP_LEN
 .endif
 .endif
