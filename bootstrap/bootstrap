@@ -868,7 +868,6 @@ powerpc/64)	abi=64	machine_arch=powerpc64	;;
 powerpc/*)	abi=32	machine_arch=powerpc	;;
 powerpc64/32)	abi=32	machine_arch=powerpc	;;
 powerpc64/*)	abi=64	machine_arch=powerpc64	;;
-# "i386" can support 64-bit, e.g. SunOS, defaults to 32-bit.
 # "sparc" can support 64-bit, e.g. SunOS, defaults to 32-bit.
 sparc/64)	abi=64	machine_arch=sparc64	;;
 sparc/*)	abi=32	machine_arch=sparc	;;
