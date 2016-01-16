@@ -1,10 +1,9 @@
-# $NetBSD: Makefile,v 1.36.2.1 2016/02/06 19:50:15 spz Exp $
+# $NetBSD: Makefile,v 1.37 2016/01/16 09:43:44 fhajny Exp $
 
 .include "version.mk"
 
 DISTNAME=	go${GO_VERSION}.src
 PKGNAME=	go-${GO_VERSION}
-PKGREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://storage.googleapis.com/golang/
 
@@ -17,7 +16,7 @@ WRKSRC=		${WRKDIR}/go
 USE_TOOLS+=	bash:run perl:run pax
 
 # uses ulimit -T
-BUILD_DEPENDS+=	bash>=4.2nb3:../../shells/bash
+# BUILD_DEPENDS+=	bash>=4.2nb3:../../shells/bash
 
 # cgo compiles under TMPDIR
 TMPDIR?=	/tmp
