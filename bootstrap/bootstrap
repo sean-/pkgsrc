@@ -858,9 +858,17 @@ amd64/*)	abi=64	machine_arch=x86_64	;;
 # XXX: hppa untested
 hppa/64)	abi=64	machine_arch=hppa64	;;
 hppa/*)		abi=32	machine_arch=hppa	;;
+hppa64/32)	abi=32	machine_arch=hppa	;;
+hppa64/*)	abi=64	machine_arch=hppa64	;;
 # "i386" can support 64-bit, e.g. SunOS, defaults to 32-bit.
 i386/64)	abi=64	machine_arch=x86_64	;;
 i386/*)		abi=32	machine_arch=i386	;;
+# XXX: powerpc untested
+powerpc/64)	abi=64	machine_arch=powerpc64	;;
+powerpc/*)	abi=32	machine_arch=powerpc	;;
+powerpc64/32)	abi=32	machine_arch=powerpc	;;
+powerpc64/*)	abi=64	machine_arch=powerpc64	;;
+# "i386" can support 64-bit, e.g. SunOS, defaults to 32-bit.
 # "sparc" can support 64-bit, e.g. SunOS, defaults to 32-bit.
 sparc/64)	abi=64	machine_arch=sparc64	;;
 sparc/*)	abi=32	machine_arch=sparc	;;
