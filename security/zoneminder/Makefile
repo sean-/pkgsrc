@@ -31,6 +31,9 @@ GNU_CONFIGURE=	yes
 USE_LANGUAGES=	c c++
 USE_TOOLS+=	aclocal autoconf autoheader automake gmake perl pkg-config
 
+# Make sure p5-DBD-{mysql,percona}* matches the mysql.bl3 above
+BUILD_DEPENDS+=	p5-DBD-${MYSQL_PKG_PREFIX}-[0-9]*:../../databases/p5-DBD-mysql
+
 # MIME::Entity is needed from p5-MIME-tools
 # LWP::UserAgent is needed from p5-libwww
 DEPENDS+=	p5-Archive-Zip-[0-9]*:../../archivers/p5-Archive-Zip

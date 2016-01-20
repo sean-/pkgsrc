@@ -68,6 +68,9 @@ LICENSE=	squeezeboxserver-license
 MYSQL_VERSIONS_ACCEPTED=	55
 .include "../../mk/mysql.buildlink3.mk"
 
+# Make sure p5-DBD-{mysql,percona}* matches the mysql.bl3 above
+BUILD_DEPENDS+=	p5-DBD-${MYSQL_PKG_PREFIX}-[0-9]*:../../databases/p5-DBD-mysql
+
 # Audio converters
 DEPENDS+=	wavpack-[0-9]*:../../audio/wavpack
 DEPENDS+=	sox-[0-9]*:../../audio/sox
