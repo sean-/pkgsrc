@@ -916,6 +916,14 @@ main(int argc, char **argv)
 #endif
 	}
 
+	/*
+	 * Hardcode default pkgsrc MACHINE_ARCH.  There is only one legitimate
+	 * way to override the variable, and that is through the environment,
+	 * handled above.  We need to use PKGSRC_MACHINE_ARCH as some OS define
+	 * MACHINE_ARCH in their system headers.
+	 */
+	machine_arch = PKGSRC_MACHINE_ARCH;
+
 	if (!machine_arch) {
 #if defined(MAKE_NATIVE) && defined(HAVE_SYSCTL) && defined(CTL_HW) && defined(HW_MACHINE_ARCH)
 	    static char machine_arch_buf[sizeof(utsname.machine)];
