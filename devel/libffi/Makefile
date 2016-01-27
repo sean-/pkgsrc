@@ -52,5 +52,16 @@ USE_TOOLS+=		bash gmake
 MAKE_FLAGS+=		SHELL=${TOOLS_DIR}/bin/bash
 .endif
 
+.if ${MULTIARCH:U:tl} == "yes"
+do-install-multiarch-hook:
+	${MKDIR} ${DESTDIR}/${PREFIX}/include${INCARCHSUFFIX}
+	${MV} ${DESTDIR}/${PREFIX}/include/ffi.h \
+		${DESTDIR}/${PREFIX}/include${INCARCHSUFFIX}
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/ffi.h \
+		${DESTDIR}/${PREFIX}/include
+.endif
+
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
