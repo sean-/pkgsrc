@@ -4,3 +4,5 @@ SHA1 (qtlocation-opensource-src-5.5.1.tar.xz) = 700bf32e15c7d808e71bca7b908b0811
 RMD160 (qtlocation-opensource-src-5.5.1.tar.xz) = 3792eedc159db6bf15eef706ee218f3cc5759a51
 SHA512 (qtlocation-opensource-src-5.5.1.tar.xz) = d7b1563fdfdb628e78f5a1cdd7c381221888370f96446d47eedb1bc4dbbffb512bc336940f0fc6b65501c2d8ff81eff153512ff231c74e760907122683172ba2
 Size (qtlocation-opensource-src-5.5.1.tar.xz) = 3108096 bytes
+SHA1 (patch-src_3rdparty_poly2tri_common_shapes.h) = 09606b35b17e222e92e047add0d8500a70797f08
+SHA1 (patch-src_3rdparty_poly2tri_sweep_sweep__context.h) = 72b9f5d315a934cfadc6cc03be0174cbecad3a4b

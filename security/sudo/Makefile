@@ -18,6 +18,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--disable-path-info
 CONFIGURE_ARGS+=	--disable-root-mailer
 CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
+CONFIGURE_ARGS+=	--with-exampledir=${PREFIX}/${EGDIR}
 CONFIGURE_ARGS+=	--with-ignore-dot
 CONFIGURE_ARGS+=	--with-nbsdops
 CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/lib # for a bunch of shared libs
