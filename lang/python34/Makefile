@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.7 2014/10/09 09:15:38 adam Exp $
+# $NetBSD: Makefile,v 1.9 2015/02/26 06:23:06 adam Exp $
 
 .include "dist.mk"
 
@@ -80,6 +80,12 @@ PLIST.oss=	yes
 # Make sure python modules can link correctly
 .if ${OPSYS} == "Darwin"
 INSTALL_UNSTRIPPED=	yes
+.endif
+
+# For Xcode 5 and up, we need to search the SDK path for headers, otherwise
+# certain modules will not be built.
+.if ${OPSYS} == "Darwin" && exists(${OSX_SDK_PATH:Q}/usr/include)
+CFLAGS+=		-I${OSX_SDK_PATH:Q}/usr/include
 .endif
 
 PLIST_VARS+=	bsddb dll nis no-nis

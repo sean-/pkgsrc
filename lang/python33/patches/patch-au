@@ -2,7 +2,7 @@ $NetBSD: patch-au,v 1.2 2013/05/26 17:56:09 wiz Exp $
 
 Support multiarch.
 
---- Makefile.pre.in.orig	2013-05-15 16:32:57.000000000 +0000
+--- Makefile.pre.in.orig	2014-10-12 07:03:53.000000000 +0000
 +++ Makefile.pre.in
 @@ -81,7 +81,7 @@ PY_CFLAGS=	$(BASECFLAGS) $(OPT) $(CONFIG
  # be able to build extension modules using the directories specified in the
@@ -22,7 +22,16 @@ Support multiarch.
  
  # Executable suffix (.exe on Windows and Mac OS X)
  EXE=		@EXEEXT@
-@@ -744,7 +744,7 @@ Objects/setobject.o: $(srcdir)/Objects/s
+@@ -610,7 +610,7 @@ Modules/_testembed: Modules/_testembed.o
+ Modules/_freeze_importlib: Modules/_freeze_importlib.o $(LIBRARY_OBJS_OMIT_FROZEN)
+ 	$(LINKCC) $(PY_LDFLAGS) -o $@ Modules/_freeze_importlib.o $(LIBRARY_OBJS_OMIT_FROZEN) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
+ 
+-Python/importlib.h: $(srcdir)/Lib/importlib/_bootstrap.py Modules/_freeze_importlib.c
++Python/importlib.h: $(srcdir)/Lib/importlib/_bootstrap.py Modules/_freeze_importlib.c $(LIBRARY_OBJS_OMIT_FROZEN)
+ 	$(MAKE) Modules/_freeze_importlib
+ 	./Modules/_freeze_importlib \
+ 		$(srcdir)/Lib/importlib/_bootstrap.py Python/importlib.h
+@@ -749,7 +749,7 @@ Objects/setobject.o: $(srcdir)/Objects/s
  $(OPCODETARGETS_H): $(OPCODETARGETGEN_FILES)
  	$(OPCODETARGETGEN) $(OPCODETARGETS_H)
  
@@ -31,7 +40,7 @@ Support multiarch.
  
  Python/formatter_unicode.o: $(srcdir)/Python/formatter_unicode.c \
  				$(BYTESTR_DEPS)
-@@ -930,7 +930,7 @@ $(DESTSHARED):
+@@ -936,7 +936,7 @@ $(DESTSHARED):
  # Install the interpreter with $(VERSION) affixed
  # This goes into $(exec_prefix)
  altbininstall: $(BUILDPYTHON)
@@ -40,7 +49,7 @@ Support multiarch.
  	do \
  		if test ! -d $(DESTDIR)$$i; then \
  			echo "Creating directory $$i"; \
-@@ -949,13 +949,13 @@ altbininstall: $(BUILDPYTHON)
+@@ -955,15 +955,16 @@ altbininstall: $(BUILDPYTHON)
  		if test -n "$(DLLLIBRARY)" ; then \
  			$(INSTALL_SHARED) $(DLLLIBRARY) $(DESTDIR)$(BINDIR); \
  		else \
@@ -55,9 +64,13 @@ Support multiarch.
 -			$(INSTALL_SHARED) $(PY3LIBRARY) $(DESTDIR)$(LIBDIR)/$(PY3LIBRARY); \
 +			$(INSTALL_SHARED) $(PY3LIBRARY) $(DESTDIR)$(LIBDIR)@LIBARCHSUFFIX@/$(PY3LIBRARY); \
  		fi; \
- 	else	true; \
+-	else	true; \
++	elif test -f $(INSTSONAME); then \
++		$(INSTALL_SHARED) $(INSTSONAME) $(DESTDIR)$(LIBDIR)@LIBARCHSUFFIX@; \
  	fi
-@@ -1177,10 +1177,10 @@ inclinstall:
+ 
+ bininstall: altbininstall
+@@ -1186,10 +1187,10 @@ inclinstall:
  
  # Install the library and miscellaneous stuff needed for extending/embedding
  # This goes into $(exec_prefix)
