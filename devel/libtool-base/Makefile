@@ -46,6 +46,7 @@ CONFIGURE_ARGS.AIX+=	--disable-libtool-lock
 # workaround is itself broken.  Disable it unconditionally.
 CONFIGURE_ARGS.IRIX+=	--disable-libtool-lock
 
+CONFIGURE_ARGS.SunOS+=	--disable-static
 CFLAGS.SunOS+=	${_COMPILER_ABI_FLAG.${ABI}}
 
 # We are going to want libtool to find the same versions of the C, C++,

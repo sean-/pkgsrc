@@ -164,6 +164,24 @@ $NetBSD: patch-ab,v 1.25 2014/06/07 08:19:14 obache Exp $
  MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK}"
  MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${MAKEFILE_CXX}"
  MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -avoid-version"
+@@ -16198,7 +16240,7 @@ else
+ fi
+ INSTALL_LIBS="$DEFAULT_LIB"
+ if test "$enable_static" = "yes"; then
+-	INSTALL_LIBS="$INSTALL_LIBS \$(libdb)"
++	: INSTALL_LIBS="$INSTALL_LIBS \$(libdb)"
+ fi
+ 
+ # Optional C++ API.
+@@ -16211,7 +16253,7 @@ if test "$db_cv_cxx" = "yes"; then
+ 	fi
+ 	INSTALL_LIBS="$INSTALL_LIBS $DEFAULT_LIB_CXX"
+ 	if test "$enable_static" = "yes"; then
+-		INSTALL_LIBS="$INSTALL_LIBS \$(libcxx)"
++		: INSTALL_LIBS="$INSTALL_LIBS \$(libcxx)"
+ 	fi
+ fi
+ 
 @@ -16890,7 +16932,7 @@ if test "$_JTOPDIR" != "/usr"; then
  	aix*)		_JNI_INC_SUBDIRS="aix";;
  	bsdi*)		_JNI_INC_SUBDIRS="bsdos";;
