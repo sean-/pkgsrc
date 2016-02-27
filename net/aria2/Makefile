@@ -26,6 +26,9 @@ CONFIGURE_ARGS+=	--with-included-gettext=no
 CONFIGURE_ARGS+=	--with-libexpat
 CONFIGURE_ARGS+=	--without-libxml2
 
+OPSYSVARS+=		CONFIGURE_ARGS
+CONFIGURE_ARGS.SunOS+=	--disable-epoll
+
 GCC_REQD+=		3.4
 TEST_TARGET=		check
 USE_FEATURES=		getopt_long snprintf
