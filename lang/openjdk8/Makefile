@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.28 2016/02/19 22:59:27 ryoon Exp $
+# $NetBSD: Makefile,v 1.30 2016/03/11 07:02:59 tnn Exp $
 
 DISTNAME=	openjdk-1.8.74-20160219
 PKGNAME=	openjdk8-1.8.74
@@ -46,6 +46,7 @@ CONFIGURE_ARGS+=	--build=${MACHINE_GNU_PLATFORM:Q}
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM:Q}
 CONFIGURE_ARGS+=	--with-boot-jdk=${ALT_BOOTDIR}
 CONFIGURE_ARGS+=	--with-zlib=system
+MAKEFLAGS+=		LIBZ="${COMPILER_RPATH_FLAG}${BUILDLINK_PREFIX.zlib}/lib -L${BUILDLINK_PREFIX.zlib}/lib -lz"
 CONFIGURE_ARGS+=	--with-giflib=bundled
 CONFIGURE_ARGS+=	--with-cups=${BUILDLINK_PREFIX.cups}
 CONFIGURE_ARGS+=	--with-freetype-lib=${BUILDLINK_PREFIX.freetype2}/lib
