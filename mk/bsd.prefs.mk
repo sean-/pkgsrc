@@ -725,7 +725,7 @@ _PKGSRC_USE_RELRO=	yes
 .endif
 
 _PKGSRC_USE_SSP=	no
-.if (${PKGSRC_USE_SSP:tl} == "yes") && \
+.if (${PKGSRC_USE_SSP:tl} != "no") && \
     (${_OPSYS_SUPPORTS_SSP:Uno} == "yes")
 _PKGSRC_USE_SSP=	yes
 .endif
