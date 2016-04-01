@@ -20,6 +20,9 @@ PLIST.dtrace=	yes
 CONFIGURE_ARGS+=	--without-dtrace
 .endif
 
+# print-PLIST helper
+PRINT_PLIST_AWK+=	{if ($$0 ~ /lib\/dtrace/) {$$0 = "$${PLIST.dtrace}" $$0;}}
+
 .if !empty(PKG_OPTIONS:Micu)
 CONFIGURE_ARGS+=	--with-intl=system-icu
 .include "../../textproc/icu/buildlink3.mk"
@@ -30,7 +33,7 @@ BUILDLINK_API_DEPENDS.openssl+=	openssl>=1.0.2
 .include "../../security/openssl/buildlink3.mk"
 CONFIGURE_ARGS+=	--shared-openssl
 .else
-CONFIGURE_ARGS+=	--without-openssl
+CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .if empty(PKG_OPTIONS:Msnapshot)
