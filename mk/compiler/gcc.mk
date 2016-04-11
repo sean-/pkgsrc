@@ -346,12 +346,10 @@ _MKPIE_CFLAGS.gcc=	-fPIC
 # XXX for libraries a sink wrapper around gcc is required and used instead
 #_MKPIE_LDFLAGS.gcc=	-pie
 _RELRO_LDFLAGS.gcc=	-Wl,-z,relro -Wl,-z,now
-_SSP_CFLAGS.gcc=	-fstack-protector-all
 .endif
 
 .if ${OPSYS} == "SunOS"
 _FORTIFY_CFLAGS.gcc=	-D_FORTIFY_SOURCE=2
-_SSP_CFLAGS.gcc=	-fstack-protector
 .endif
 
 .if ${_PKGSRC_MKPIE} == "yes"
@@ -372,9 +370,18 @@ _GCC_LDFLAGS+=		${_RELRO_LDFLAGS.gcc}
 CWRAPPERS_APPEND.ld+=	${_RELRO_LDFLAGS.gcc}
 .endif
  
+# The user can choose the level of stack smashing protection.
+.if ${PKGSRC_USE_SSP} == "all"
+_SSP_CFLAGS=		-fstack-protector-all
+.elif ${PKGSRC_USE_SSP} == "strong"
+_SSP_CFLAGS=		-fstack-protector-strong
+.else
+_SSP_CFLAGS=		-fstack-protector
+.endif
+
 .if ${_PKGSRC_USE_SSP} == "yes"
-_GCC_CFLAGS+=		${_SSP_CFLAGS.gcc}
-CWRAPPERS_APPEND.cc+=	${_SSP_CFLAGS.gcc}
+_WRAP_EXTRA_ARGS.CC+=	${_SSP_CFLAGS}
+CWRAPPERS_APPEND.cc+=	${_SSP_CFLAGS}
 .endif
 
 # GCC has this annoying behaviour where it advocates in a multi-line
@@ -916,7 +923,7 @@ PREPEND_PATH+=	${_GCC_DIR}/bin
 # Add dependency on GCC libraries if requested.
 .if (defined(_USE_GCC_SHLIB) && !empty(_USE_GCC_SHLIB:M[Yy][Ee][Ss])) && !empty(USE_PKGSRC_GCC_RUNTIME:M[Yy][Ee][Ss])
 #  Special case packages which are themselves a dependency of gcc runtime.
-.  if empty(PKGPATH:Mdevel/libtool-base) && empty(PKGPATH:Mdevel/binutils) && empty(PKGPATH:Mlang/gcc??)
+.  if empty(PKGPATH:Mdevel/binutils) && empty(PKGPATH:Mlang/gcc??)
 .    if !empty(CC_VERSION:Mgcc-4.6*)
 .      include "../../lang/gcc46-libs/buildlink3.mk"
 .    elif !empty(CC_VERSION:Mgcc-4.7*)
