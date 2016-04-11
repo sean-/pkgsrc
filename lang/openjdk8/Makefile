@@ -36,6 +36,7 @@ USE_TOOLS+=		bash gmake pax pkg-config unzip:run zip:run
 UNLIMIT_RESOURCES=	datasize stacksize
 WRKSRC=			${WRKDIR}/openjdk
 PLIST_SRC+=		${PLIST_SRC_DFLT}
+CHECK_SHLIBS_SKIP=	java/openjdk8/jre/lib/${LIBDIR_ARCH}/libinstrument.so
 
 BUILDLINK_PASSTHRU_DIRS+=	${ALT_BOOTDIR}
 PREPEND_PATH+=			${ALT_BOOTDIR}/bin
