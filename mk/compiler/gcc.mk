@@ -381,7 +381,9 @@ _SSP_CFLAGS=		-fstack-protector
 
 .if ${_PKGSRC_USE_SSP} == "yes"
 _WRAP_EXTRA_ARGS.CC+=	${_SSP_CFLAGS}
+_WRAP_EXTRA_ARGS.CXX+=	${_SSP_CFLAGS}
 CWRAPPERS_APPEND.cc+=	${_SSP_CFLAGS}
+CWRAPPERS_APPEND.cxx+=	${_SSP_CFLAGS}
 .endif
 
 # GCC has this annoying behaviour where it advocates in a multi-line
