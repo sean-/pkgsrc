@@ -40,16 +40,15 @@ if [ "${config_version}" != "@PBULK_CONFIG_VERSION@" ]; then
 	exit 1
 fi
 
-if [ -n "${pkg_rsync_min}" ]; then
-	numpkgs=`wc -l < ${loc}/success`
-	if [ ! ${numpkgs} -gt ${pkg_rsync_min} ]; then
-		# If something went wrong with the build, we don't want the
-		# remote packages to be deleted and pkg_summary truncated.
-		echo "WARNING: Number of packages built (${numpkgs}) did not" \
-		    "exceed the minimum threshold (${pkg_rsync_min})."
-		echo "WARNING: Package upload phase will be skipped."
-		exit 0
-	fi
+#
+# Run optional check script.  This allows ensuring certain criteria are met
+# before continuing with the upload process, for example to avoid publishing
+# a new package set with critical packages missing.  PBULK_CONF is passed in
+# the environment so that the script can source it for useful variables.
+#
+if [ -x "${script_phase_pre_upload}" ]; then
+	echo "Running pre-upload check script..."
+	PBULK_CONF=${PBULK_CONF:-@PBULK_CONFIG@} ${script_phase_pre_upload}
 fi
 
 echo "Uploading packages..."
