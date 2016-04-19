@@ -3,9 +3,20 @@ $NetBSD: patch-ag,v 1.2 2016/01/16 12:15:12 ryoon Exp $
 # Only include only the non-omitted components 
 # Support multiarch
 
---- Makefile.orig	2016-03-24 12:10:59.000000000 +0000
+--- Makefile.orig	2015-08-04 05:21:07.000000000 +0000
 +++ Makefile
-@@ -39,7 +39,7 @@ CppUnit-clean:
+@@ -27,7 +27,9 @@ poco: libexecs $(if $(TESTS),tests) $(if
+ all: libexecs tests samples
+ 
+ INSTALLDIR = $(DESTDIR)$(POCO_PREFIX)
+-COMPONENTS = Foundation XML JSON Util Net Crypto NetSSL_OpenSSL Data Data/SQLite Data/ODBC Data/MySQL MongoDB Zip PageCompiler PageCompiler/File2Page
++Master_COMPONENTS = Foundation XML JSON Util Net Crypto NetSSL_OpenSSL Data Data/SQLite Data/ODBC Data/MySQL MongoDB Zip PageCompiler PageCompiler/File2Page
++
++COMPONENTS=$(filter-out $(foreach f,$(OMIT),$f%),$(Master_COMPONENTS))
+ 
+ cppunit:
+ 	$(MAKE) -C $(POCO_BASE)/CppUnit 
+@@ -37,7 +39,7 @@ CppUnit-clean:
  
  install: libexecs
  	mkdir -p $(INSTALLDIR)/include/Poco
@@ -14,7 +25,7 @@ $NetBSD: patch-ag,v 1.2 2016/01/16 12:15:12 ryoon Exp $
  	mkdir -p $(INSTALLDIR)/bin
  	for comp in $(COMPONENTS) ; do \
  		if [ -d "$(POCO_BASE)/$$comp/include" ] ; then \
-@@ -49,8 +49,8 @@ install: libexecs
+@@ -47,8 +49,8 @@ install: libexecs
  			find $(POCO_BUILD)/$$comp/bin -perm -700 -type f -exec cp -f {} $(INSTALLDIR)/bin \; ; \
  		fi ; \
  	done
