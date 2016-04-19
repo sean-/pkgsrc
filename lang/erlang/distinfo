@@ -9,3 +9,4 @@ SHA1 (patch-am) = b2124f362657d5c6c0c17f0ede74448573fe7912
 SHA1 (patch-ao) = e5801f2a1f1f7e8b75dc35abbc485dc310666a37
 SHA1 (patch-ay) = f5f1accdb11e404ba4779b056228431e3080e4cd
 SHA1 (patch-erts_emulator_drivers_common_inet__drv.c) = b7784e5e8e025ca75d5279a63e0cb3f74c54bd6a
+SHA1 (patch-make_output.mk.in) = d7b3da58bfb471d52c41242e2a03d1598ce24e62

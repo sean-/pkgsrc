@@ -13,7 +13,7 @@ o Do not conflict with CMAKE_MODULE_PATH during the linking phase of
 
 o Disable DatabaseProcess and IndexedDB support.
 
---- Source/cmake/OptionsGTK.cmake.orig	2016-01-20 12:45:56.000000000 +0000
+--- Source/cmake/OptionsGTK.cmake.orig	2016-01-29 16:53:52.000000000 +0000
 +++ Source/cmake/OptionsGTK.cmake
 @@ -6,13 +6,6 @@ set(PROJECT_VERSION_MICRO 7)
  set(PROJECT_VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_MICRO})
@@ -29,11 +29,13 @@ o Disable DatabaseProcess and IndexedDB support.
  # Libtool library version, not to be confused with API version.
  # See http://www.gnu.org/software/libtool/manual/html_node/Libtool-versioning.html
  CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT2 48 10 11)
-@@ -106,7 +99,7 @@ else ()
+@@ -105,8 +98,8 @@ if (DEVELOPER_MODE)
+ else ()
      WEBKIT_OPTION_DEFAULT_PORT_VALUE(ENABLE_MINIBROWSER PUBLIC OFF)
      WEBKIT_OPTION_DEFAULT_PORT_VALUE(ENABLE_API_TESTS PRIVATE OFF)
-     if (NOT CMAKE_SYSTEM_NAME MATCHES "Darwin")
+-    if (NOT CMAKE_SYSTEM_NAME MATCHES "Darwin")
 -        set(WebKit2_VERSION_SCRIPT "-Wl,--version-script,${CMAKE_MODULE_PATH}/gtksymbols.filter")
++    if (NOT CMAKE_SYSTEM_NAME MATCHES "Darwin" AND NOT CMAKE_SYSTEM_NAME MATCHES "SunOS")
 +        set(WebKit2_VERSION_SCRIPT "-Wl,--version-script,${CMAKE_SOURCE_DIR}/Source/cmake/gtksymbols.filter")
      endif ()
  endif ()
