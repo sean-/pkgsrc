@@ -62,6 +62,7 @@ PYTHON_VERSIONS_INCOMPATIBLE=	33 34 35 # not yet ported as of 1.10.2
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHONBIN}
 
 CXXFLAGS.SunOS+=	-D__EXTENSIONS__ -fpermissive
+LDFLAGS.SunOS+=		-lsocket
 
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
