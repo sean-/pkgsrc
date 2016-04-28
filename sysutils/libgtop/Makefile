@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.50 2016/02/26 10:24:13 jperkin Exp $
+# $NetBSD: Makefile,v 1.52 2016/04/28 22:18:58 jperkin Exp $
 
 DISTNAME=		libgtop-2.28.4
-PKGREVISION=		8
+PKGREVISION=		9
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtop/2.28/}
 EXTRACT_SUFX=		.tar.bz2
@@ -54,7 +54,7 @@ PLIST_VARS+=	server suid.h
 PLIST.server=	yes
 PLIST.suid.h=	yes
 SPECIAL_PERMS=	bin/libgtop_server2 ${REAL_ROOT_USER} system 2755
-.elif ${OPSYS} == "Darwin" || ${OPSYS} == "DragonFly" || \
+.elif ${OPSYS} == "DragonFly" || \
       ${OPSYS} == "FreeBSD" || ${OPSYS} == "NetBSD" || \
       ${OPSYS} == "OpenBSD"
 PLIST.server=	yes
@@ -66,6 +66,8 @@ SPECIAL_PERMS=	bin/libgtop_server2 ${REAL_ROOT_USER} kmem 2755
 .elif ${OPSYS} == "SunOS"
 PLIST.server=	yes
 SPECIAL_PERMS=	bin/libgtop_server2 ${REAL_ROOT_USER} sys 2755
+.elif ${OPSYS} == "Darwin"
+PLIST.server=	yes
 .else
 PLIST.server=	yes
 PLIST.suid.h=	yes
