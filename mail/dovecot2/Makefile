@@ -1,11 +1,10 @@
-# $NetBSD: Makefile,v 1.83 2016/03/05 11:27:50 jperkin Exp $
+# $NetBSD: Makefile,v 1.87 2016/05/03 01:49:52 taca Exp $
 #
 # when updating to a new release, update ABI depends in
 # the buildlink3.mk file as well, since the plugins' version
 # must match (see PR 49563).
 
-DISTNAME=	dovecot-2.2.21
-PKGREVISION=	1
+DISTNAME=	dovecot-2.2.24
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dovecot.org/releases/${PKGVERSION_NOREV:R}/
 
@@ -26,6 +25,10 @@ TEST_TARGET=	check
 
 # Explicitly disable inotify on illumos, it is provided for Linux compat only.
 CONFIGURE_ENV.SunOS+=	ac_cv_func_inotify_init=no
+
+# Sharing sources between binary and lib triggers libtool bugs
+# mv: rename .deps/auth-stats.Tpo to .deps/auth-stats.Po: No such file or directory
+MAKE_JOBS_SAFE=	no
 
 .include "../../mk/bsd.prefs.mk"
 
