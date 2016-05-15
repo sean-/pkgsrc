@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.18 2015/12/16 16:03:12 taca Exp $
+# $NetBSD: Makefile,v 1.22 2016/05/15 14:15:14 taca Exp $
 #
 
 DISTNAME=	${RUBY_DISTNAME}
