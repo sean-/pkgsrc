@@ -1705,6 +1705,7 @@ SUBDIR+=	py-gobject3-common
 SUBDIR+=	py-google-apputils
 SUBDIR+=	py-greenlet
 SUBDIR+=	py-h5py
+SUBDIR+=	py-hash
 SUBDIR+=	py-hg-fastimport
 SUBDIR+=	py-hg-git
 SUBDIR+=	py-hglib
