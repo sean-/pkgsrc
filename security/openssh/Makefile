@@ -1,8 +1,7 @@
-# $NetBSD: Makefile,v 1.238 2015/11/11 11:40:06 sevan Exp $
+# $NetBSD: Makefile,v 1.243 2016/03/15 20:54:07 bsiegert Exp $
 
-DISTNAME=		openssh-7.1p1
-PKGNAME=		${DISTNAME:S/p1/.1/}
-PKGREVISION= 		1
+DISTNAME=		openssh-7.2p2
+PKGNAME=		${DISTNAME:S/p2/.2/}
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_OPENBSD:=OpenSSH/portable/}
 
@@ -116,6 +115,7 @@ CONFIGURE_ENV+=		ac_cv_func_strnvis=no
 .if (${OPSYS} == "SunOS") && (${OS_VERSION} == "5.8" || ${OS_VERSION} == "5.9")
 CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp
 .endif
+
 .if ${OPSYS} == "Linux"
 CONFIGURE_ARGS+=	--enable-md5-password
 .endif
