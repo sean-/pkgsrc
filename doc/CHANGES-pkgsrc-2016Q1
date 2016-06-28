@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-pkgsrc-2016Q1,v 1.1.2.6 2016/04/23 17:52:22 bsiegert Exp $
+$NetBSD: CHANGES-pkgsrc-2016Q1,v 1.1.2.25 2016/06/25 19:49:01 bsiegert Exp $
 
 Changes to the packages collection and infrastructure on the pkgsrc-2016Q1 branch:
 
@@ -18,4 +18,240 @@ lang/perl5: security fix
 
 Pullup ticket #4963 - requested by he
 x11/pixman: build fix
+
+Pullup ticket #4964 - requested by sevan
+databases/postgresql95: security fix
+
+Pullup ticket #4966 - requested by joerg
+chat/atheme: build fix
+devel/libmcs: build fix
+devel/libmowgli: build fix
+
+Pullup ticket #4968 - requested by joerg
+x11/py-qt5: build fix
+
+Pullup ticket #4969 - requested by joerg
+x11/qt4-libs: bugfix
+
+Pullup ticket #4971 - requested by taca
+www/squid3: security fix
+
+Pullup ticket #4972 - requested by taca
+lang/php55: security fix
+
+Pullup ticket #4973 - requested by taca
+lang/php56: security fix
+
+Pullup ticket #4974 - requested by taca
+lang/php70: security fix
+
+Pullup ticket #4976 - requested by joerg
+chat/ktp-contact-runner: build fix
+chat/ktp-filetransfer-handler: build fix
+chat/ktp-kded-integration-module: build fix
+chat/ktp-send-file: build fix
+
+Pullup ticket #4977 - requested by joerg
+www/aws-demos: build fix
+
+Pullup ticket #4978 - requested by joerg
+time/fet: build fix
+
+Pullup ticket #4979 - requested by joerg
+audio/ibniz: build fix
+
+Pullup ticket #4980 - requested by joerg
+devel/elftoolchain: build fix
+
+Pullup ticket #4981 - requested by joerg
+devel/xulrunner192: build fix
+
+Pullup ticket #5013 - requested by taca
+security/openssl: security fix
+
+Pullup ticket #4982 - requested by joerg
+devel/xulrunner10: build fix
+
+Pullup ticket #4983 - requested by joerg
+devel/anjuta: build fix
+
+Pullup ticket #4984 - requested by joerg
+games/flightgear: build fix
+
+Pullup ticket #4985 - requested by joerg
+games/wormz: build fix
+
+Pullup ticket #4986 - requested by joerg
+games/xevil: build fix
+
+Pullup ticket #4987 - requested by joerg
+games/darktable: build fix
+
+Pullup ticket #4988 - requested by joerg
+graphics/gdchart: build fix
+
+Pullup ticket #4989 - requested by joerg
+graphics/skencil: build fix
+
+Pullup ticket #5009 - requested by taca
+www/squid3: security fix, build fix
+
+Pullup ticket #5010 - requested by taca
+net/ntp4: security fix
+
+Pullup ticket #5011 - requested by taca
+net/samba4: security fix
+
+Pullup ticket #5012 - requested by taca
+www/typo3_62: security fix
+
+Pullup ticket #5014 - requested by sevan
+devel/xulrunner38: security fix
+www/firefox38: security fix
+
+Pullup ticket #5015 - requested by sevan
+www/firefox: security fix
+
+Pullup ticket #5016 - requested by sevan
+emulators/qemu: security fix
+
+Pullup ticket #4965 - requested by bsiegert
+www/h2o: security update
+
+Pullup ticket #5017 - requested by sevan
+sysutils/xenkernel45: security fix
+sysutils/xentools45: security fix
+
+Pullup ticket #5019 - requested by sevan
+multimedia/adobe-flash-plugin11: security fix
+
+Pullup ticket #5020 - requested by sevan
+www/ikiwiki: security fix
+
+Pullup ticket #5026 - requested by drochner
+textproc/expat: security fix
+
+Pullup ticket #5027 - requested by wen
+www/mediawiki: security fix
+
+Pullup ticket #4990 - requested by joerg
+graphics/ruby-gd: build fix
+
+Pullup ticket #4991 - requested by joerg
+lang/ghc7: build fix
+
+Pullup ticket #4992 - requested by joerg
+mail/smtp-vilter: build fix
+
+Pullup ticket #4993 - requested by joerg
+math/pari: build fix
+
+Pullup ticket #4994 - requested by joerg
+math/snns: build fix
+
+Pullup ticket #4995 - requested by joerg
+math/superlu: build fix
+
+Pullup ticket #4996 - requested by joerg
+misc/gkrellm-launch: build fix
+
+Pullup ticket #4997 - requested by joerg
+misc/kchmviewer: build fix
+
+Pullup ticket #4998 - requested by joerg
+misc/rocs: build fix
+
+Pullup ticket #4999 - requested by joerg
+multimedia/gopchop: build fix
+
+Pullup ticket #5000 - requested by joerg
+net/gkrellm: build fix
+
+Pullup ticket #5001 - requested by joerg
+net/openwbem: build fix
+
+Pullup ticket #5002 - requested by joerg
+pkgtools/pkg_select: build fix
+
+Pullup ticket #5003 - requested by joerg
+print/LPRng-core: build fix
+
+Pullup ticket #5004 - requested by joerg
+security/php-oauth: build fix
+
+Pullup ticket #5005 - requested by joerg
+sysutils/fscd: build fix
+
+Pullup ticket #5006 - requested by joerg
+sysutils/open-vm-tools: build fix
+
+Pullup ticket #5007 - requested by joerg
+sysutils/tarsnap-gui: build fix
+
+Pullup ticket #5008 - requested by joerg
+wm/fluxconf: build fix
+
+Pullup ticket #5021 - requested by joerg
+cross/uisp: build fix
+
+Pullup ticket #5022 - requested by joerg
+devel/libbson: build fix
+
+Pullup ticket #5023 - requested by joerg
+devel/tvision: build fix
+
+Pullup ticket #5024 - requested by joerg
+sysutils/xentools33: build fix
+
+Pullup ticket #5025 - requested by joerg
+sysutils/xenkernel33: build fix
+
+Pullup ticket #5028 - requested by he
+textproc/libxml2: security update
+
+Pullup ticket #5029 - requested by bsiegert
+www/moodle: security update
+
+Pullup ticket #5030 - requested by bsiegert
+graphics/librsvg: security update
+
+Pullup ticket #5032 - requested by taca
+www/typo3_62: security fix
+
+Pullup ticket #5033 - requested by taca
+mail/roundcube: security fix
+
+Pullup ticket #5034 - requested by taca
+lang/php55: security fix
+
+Pullup ticket #5035 - requested by taca
+lang/php56: security fix
+
+Pullup ticket #5036 - requested by taca
+lang/php70: security fix
+
+Pullup ticket #5037 - requested by bsiegert
+net/ntp4: security update
+
+Pullup ticket #5040 - requested by taca
+net/ntp4: package build fixes
+
+Pullup ticket #5041 - requested by taca
+security/openssh: security patch
+
+Pullup ticket #5038 - requested by joerg
+www/nginx: security patch
+www/nginx-devel: security patch
+
+Pullup ticket #5039 - requested by taca
+devel/libthrift: build fix
+
+Pullup ticket #5044 - requested by bsiegert
+security/libksba: security update
+
+Pullup ticket #5043 - requested by jperkin
+multimedia/xine-lib: dependency fix
+
+Pullup ticket #5046 - requested by taca
+www/drupal7: security fix
 
