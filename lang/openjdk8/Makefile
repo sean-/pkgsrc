@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.37 2016/07/05 14:32:21 jperkin Exp $
+# $NetBSD: Makefile,v 1.38 2016/07/19 12:32:15 jperkin Exp $
 
 DISTNAME=	openjdk-1.8.92-20160506
 PKGNAME=	openjdk8-1.8.92
@@ -134,6 +134,11 @@ SUBST_FILES.fontpaths=		jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconf
 SUBST_FILES.fontpaths+=		jdk/src/solaris/native/sun/awt/fontpath.c
 SUBST_SED.fontpaths=		-e 's|@PREFIX@|${PREFIX}|g'
 SUBST_SED.fontpaths+=		-e 's|@BUILDLINK_PREFIX.fontconfig@|${BUILDLINK_PREFIX.fontconfig}|g'
+
+SUBST_CLASSES+=			zlibpath
+SUBST_STAGE.zlibpath=		pre-build
+SUBST_FILES.zlibpath=		jdk/make/CompileLaunchers.gmk jdk/make/lib/CoreLibraries.gmk
+SUBST_VARS.zlibpath=		COMPILER_RPATH_FLAG BUILDLINK_PREFIX.zlib
 
 PLIST_VARS+=	i386
 .if ${MACHINE_ARCH} == "i386"
