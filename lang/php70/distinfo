@@ -1,11 +1,11 @@
-$NetBSD: distinfo,v 1.2.2.3 2016/03/09 20:03:23 bsiegert Exp $
+$NetBSD: distinfo,v 1.14 2016/06/24 15:27:57 taca Exp $
 
-SHA1 (php-7.0.4.tar.bz2) = 4e6ad0af73e9b8de66844dee2f14cc089cb5aea8
-RMD160 (php-7.0.4.tar.bz2) = 026b36537a9f86864bcb932389760c0dd1f5acd2
-SHA512 (php-7.0.4.tar.bz2) = 9d1dc761cdd9103a91299e01117c1790550e3b94e7694dcc2555d83e5abe3d2170acd6226e8501c5f2a77b5c374b1c9f5ea009999d476818c2682a54def86b96
-Size (php-7.0.4.tar.bz2) = 14027088 bytes
+SHA1 (php-7.0.8.tar.bz2) = c21f1d28ca20d69887bd2c020f8c0219f28d8890
+RMD160 (php-7.0.8.tar.bz2) = abf20356587ee6a11a84b64ca46f36257df0c4b1
+SHA512 (php-7.0.8.tar.bz2) = a1a119ff95ad3902264dbc267753af0cf82b5dddbfcf09a8fc2bc519e16021cbf4bc7f2b33c4fec46d7be7bed8db315371ee11390a6055adf908a3b28a6a6921
+Size (php-7.0.8.tar.bz2) = 14105805 bytes
 SHA1 (patch-acinclude.m4) = b682280fd89950c082c2226bdb7364b0dc475bad
-SHA1 (patch-configure) = 9097646e71cbfa21322ca2f01c8c256822b056ea
+SHA1 (patch-configure) = a129e19ef87338f6e53ccc967c40ddcde7c7357c
 SHA1 (patch-ext_gd_config.m4) = a7ec1bd0d876657d4b5e597b9aa1e97c2d2801e3
 SHA1 (patch-ext_imap_config.m4) = f4e10ab81697b72019313f63bc630627a08efd92
 SHA1 (patch-ext_pcre_pcrelib_config.h) = 0cb05c3b3bfafd8119cf43162c0f4db7f5b37ba8
@@ -15,10 +15,12 @@ SHA1 (patch-ext_phar_Makefile.frag) = 558869b60f8ed6674a3ba1d595a65f010df4c426
 SHA1 (patch-ext_phar_phar_phar.php) = f630e3946b21b76d4fe857a43e00e25c9445f2c8
 SHA1 (patch-ext_sqlite3_libsqlite_sqlite3.c) = 8a529a1b3f7c97731f2e719d006f67c3a7259bb5
 SHA1 (patch-ext_standard_basic__functions.c) = f97a2748c7b15fbd9a2d3c21e56079088cc05d56
+SHA1 (patch-ext_standard_php__dns.h) = 3687ceac4dff4605263b53acb761b071f7446ccb
 SHA1 (patch-makedist) = 2ac0e0391c031c4fcf4993e2269cde4c6bfddfd5
 SHA1 (patch-php.ini-development) = dd65962000ec06439fae3c9bf252fa46be4e33fd
 SHA1 (patch-php.ini-production) = ae61dffedf574b688fe576b0b2af748b7a28cd89
 SHA1 (patch-run-tests.php) = 86c4d3f03eb8e31b5a35820f426533c9478571fb
 SHA1 (patch-sapi_cgi_Makefile.frag) = 18769900f588ff81cc34474542afa1d65c070e65
+SHA1 (patch-sapi_cli_Makefile.frag) = 1cd29d09042863acbf5330e406410fdcf75d06b3
 SHA1 (patch-sapi_fpm_fpm_events_port.c) = 0f10fdb32fb7cab58e2abda49fb1fc658c410150
 SHA1 (patch-sapi_fpm_php-fpm.conf.in) = b3c4fd499cbfd2dffd9176abb54e298ea542a5d7
