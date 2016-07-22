@@ -1,3 +1,34 @@
-$NetBSD: CHANGES-pkgsrc-2016Q2,v 1.1.2.1 2016/06/30 16:36:16 jperkin Exp $
+$NetBSD: CHANGES-pkgsrc-2016Q2,v 1.1.2.6 2016/07/20 18:53:40 spz Exp $
 
 Changes to packages and infrastructure on the pkgsrc-2016Q2 branch:
+
+Pullup ticket #5054 - requested by wiz
+misc/calibre1: build fix
+
+Pullup ticket #5055 - requested by sevan
+textproc/xerces-c: security fix
+
+Pullup ticket #5056 - requested by bsiegert
+www/links: security update
+www/links-gui: security update
+
+Pullup ticket #5057 - requested by sevan
+net/haproxy: security fix
+
+Pullup ticket #5058 - requested by is
+geography/libnova: build fix
+
+Pullup ticket #5059 - requested by taca
+www/apache24: security update
+
+Pullup ticket #5064 - requested by bsiegert
+lang/go: security update
+
+Pullup ticket #5065 - requested by taca
+net/bind99: security update
+
+Pullup ticket #5066 - requested by taca
+net/bind910: security update
+
+Pullup ticket #5060 - requested by taca
+net/samba4: security update
