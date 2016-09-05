@@ -1,7 +1,13 @@
-# $NetBSD: Makefile,v 1.36.2.1 2015/07/22 20:12:58 tron Exp $
+# $NetBSD: Makefile,v 1.48 2016/07/29 11:11:24 wiz Exp $
+#
+# When updating this package, make sure that no strings like
+# "PR 12345" are in the commit message. Upstream likes
+# to reference their own PRs this way, but this ends up
+# in NetBSD GNATS.
 
-DISTNAME=	httpd-2.4.16
+DISTNAME=	httpd-2.4.23
 PKGNAME=	${DISTNAME:S/httpd/apache/}
+PKGREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/} \
 		http://archive.apache.org/dist/httpd/ \
@@ -45,6 +51,7 @@ BUILDLINK_API_DEPENDS.apr-util+=	apr-util>=1.5.3
 
 CONFIGURE_ARGS+=	--disable-xml2enc
 CONFIGURE_ARGS+=	--disable-proxy-html
+CONFIGURE_ARGS+=	--enable-proxy-fdpass
 
 DFLT_APACHE_MODULES+=	all
 APACHE_MODULES?=	${DFLT_APACHE_MODULES}
@@ -59,6 +66,11 @@ PLIST_VARS+=		ldap
 .if exists(${APRDIR}/lib/apr-util-1/apr_ldap.la)
 DFLT_APACHE_MODULES+=	ldap authnz_ldap
 PLIST.ldap=		yes
+.endif
+
+PLIST_VARS+=		ssl
+.if !empty(PKG_BUILD_OPTIONS.apr-util:Mssl)
+PLIST.ssl=		yes
 .endif
 
 APACHE_USER?=		www
