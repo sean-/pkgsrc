@@ -12,6 +12,7 @@
 # avoid having to version syncthing in pkgsrc.)
 
 DISTNAME=	syncthing-0.12.7
+PKGREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GITHUB:=syncthing/}
 GITHUB_TAG=	v${PKGVERSION_NOREV}

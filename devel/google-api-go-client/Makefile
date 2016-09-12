@@ -3,7 +3,7 @@
 
 DISTNAME=		google-api-go-client
 PKGNAME=		google-api-go-client-20150507
-PKGREVISION=		1
+PKGREVISION=		2
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GITHUB:=google/}
 GITHUB_PROJECT=		${DISTNAME}
