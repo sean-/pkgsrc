@@ -44,11 +44,11 @@ post-extract:
 	${RUN} ${MV} ${WRKDIR}/`basename ${GO_DIST_BASE}`/* ${WRKSRC}
 
 do-build:
-	${RUN} env GOPATH=${WRKDIR}:${BUILDLINK_DIR}/gopkg go install -v ${GO_BUILD_PATTERN}
+	${RUN} env GOPATH=${WRKDIR}:${PREFIX}/gopkg go install -v ${GO_BUILD_PATTERN}
 
 .if !target(do-test)
 do-test:
-	${RUN} env GOPATH=${WRKDIR}:${BUILDLINK_DIR}/gopkg go test -v ${GO_BUILD_PATTERN}
+	${RUN} env GOPATH=${WRKDIR}:${PREFIX}/gopkg go test -v ${GO_BUILD_PATTERN}
 .endif
 
 do-install:
