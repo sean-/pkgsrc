@@ -1208,6 +1208,9 @@ ${PYSITELIB}/salt/modules/reg.pyo
 ${PYSITELIB}/salt/modules/rest_package.py
 ${PYSITELIB}/salt/modules/rest_package.pyc
 ${PYSITELIB}/salt/modules/rest_package.pyo
+${PYSITELIB}/salt/modules/rest_sample_utils.py
+${PYSITELIB}/salt/modules/rest_sample_utils.pyc
+${PYSITELIB}/salt/modules/rest_sample_utils.pyo
 ${PYSITELIB}/salt/modules/rest_service.py
 ${PYSITELIB}/salt/modules/rest_service.pyc
 ${PYSITELIB}/salt/modules/rest_service.pyo
@@ -3051,6 +3054,7 @@ man/man1/salt-run.1
 man/man1/salt-ssh.1
 man/man1/salt-syndic.1
 man/man1/salt-unity.1
+man/man1/spm.1
 man/man7/salt.7
 share/examples/salt/master
 share/examples/salt/minion
