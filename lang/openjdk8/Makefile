@@ -1,8 +1,7 @@
-# $NetBSD: Makefile,v 1.26 2015/12/14 23:05:11 asau Exp $
+# $NetBSD: Makefile,v 1.40 2016/08/15 19:09:38 ryoon Exp $
 
-DISTNAME=	openjdk-1.8.66-20151103
-PKGNAME=	openjdk8-1.8.66
-PKGREVISION=	1
+DISTNAME=	openjdk-1.8.102-20160811
+PKGNAME=	openjdk8-1.8.102
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL:=openjdk7/}
 EXTRACT_SUFX=	.tar.xz
@@ -37,6 +36,7 @@ USE_TOOLS+=		bash gmake pax pkg-config unzip:run zip:run
 UNLIMIT_RESOURCES=	datasize stacksize
 WRKSRC=			${WRKDIR}/openjdk
 PLIST_SRC+=		${PLIST_SRC_DFLT}
+CHECK_SHLIBS_SKIP+=	java/openjdk8/jre/lib/${LIBDIR_ARCH}/libinstrument.so
 
 BUILDLINK_PASSTHRU_DIRS+=	${ALT_BOOTDIR}
 PREPEND_PATH+=			${ALT_BOOTDIR}/bin
@@ -134,6 +134,11 @@ SUBST_FILES.fontpaths=		jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconf
 SUBST_FILES.fontpaths+=		jdk/src/solaris/native/sun/awt/fontpath.c
 SUBST_SED.fontpaths=		-e 's|@PREFIX@|${PREFIX}|g'
 SUBST_SED.fontpaths+=		-e 's|@BUILDLINK_PREFIX.fontconfig@|${BUILDLINK_PREFIX.fontconfig}|g'
+
+SUBST_CLASSES+=			zlibpath
+SUBST_STAGE.zlibpath=		pre-build
+SUBST_FILES.zlibpath=		jdk/make/CompileLaunchers.gmk jdk/make/lib/CoreLibraries.gmk
+SUBST_VARS.zlibpath=		COMPILER_RPATH_FLAG BUILDLINK_PREFIX.zlib
 
 PLIST_VARS+=	i386
 .if ${MACHINE_ARCH} == "i386"

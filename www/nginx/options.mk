@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.35 2015/12/10 19:33:41 shattered Exp $
+# $NetBSD: options.mk,v 1.36 2016/06/15 14:49:11 fhajny Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.nginx
 PKG_SUPPORTED_OPTIONS=	dav flv gtools inet6 luajit mail-proxy memcache naxsi \
@@ -52,11 +52,7 @@ CONFIGURE_ARGS+=	--with-http_dav_module
 CONFIGURE_ARGS+=	--with-http_flv_module
 .endif
 
-.if !empty(PKG_OPTIONS:Mspdy) && empty(NGINX_HTTP_V2)
-CONFIGURE_ARGS+=	--with-http_spdy_module
-.endif
-
-.if !empty(PKG_OPTIONS:Mv2) && !empty(NGINX_HTTP_V2)
+.if !empty(PKG_OPTIONS:Mv2)
 CONFIGURE_ARGS+=	--with-http_v2_module
 .endif
 
@@ -101,7 +97,7 @@ NEED_NDK=		yes
 .	endif
 .endfor
 .if defined(NEED_NDK) || make(makesum)
-NDK_VERSION=		0.2.19
+NDK_VERSION=		0.3.0
 NDK_DISTNAME=		ngx_devel_kit-${NDK_VERSION}
 NDK_DISTFILE=		${NDK_DISTNAME}.tar.gz
 SITES.${NDK_DISTFILE}=	-https://github.com/simpl/ngx_devel_kit/archive/v${NDK_VERSION}.tar.gz
@@ -115,7 +111,7 @@ CONFIGURE_ENV+=		LUAJIT_INC=${PREFIX}/include/luajit-2.0
 CONFIGURE_ARGS+=	--add-module=../${LUA_DISTNAME}
 .endif
 .if !empty(PKG_OPTIONS:Mluajit) || make(makesum)
-LUA_VERSION=		0.9.16
+LUA_VERSION=		0.10.5
 LUA_DISTNAME=		lua-nginx-module-${LUA_VERSION}
 LUA_DISTFILE=		${LUA_DISTNAME}.tar.gz
 SITES.${LUA_DISTFILE}=	-https://github.com/openresty/lua-nginx-module/archive/v${LUA_VERSION}.tar.gz
@@ -126,7 +122,7 @@ DISTFILES+=		${LUA_DISTFILE}
 CONFIGURE_ARGS+=	--add-module=../${ECHOMOD_DISTNAME}
 .endif
 .if !empty(PKG_OPTIONS:Mecho) || make(makesum)
-ECHOMOD_VERSION=	0.58
+ECHOMOD_VERSION=	0.59
 ECHOMOD_DISTNAME=	echo-nginx-module-${ECHOMOD_VERSION}
 ECHOMOD_DISTFILE=	${ECHOMOD_DISTNAME}.tar.gz
 SITES.${ECHOMOD_DISTFILE}=	-https://github.com/openresty/echo-nginx-module/archive/v${ECHOMOD_VERSION}.tar.gz
@@ -137,7 +133,7 @@ DISTFILES+=		${ECHOMOD_DISTFILE}
 CONFIGURE_ARGS+=	--add-module=../${SETMISC_DISTNAME}
 .endif
 .if !empty(PKG_OPTIONS:Mset-misc) || make(makesum)
-SETMISC_VERSION=	0.29
+SETMISC_VERSION=	0.30
 SETMISC_DISTNAME=	set-misc-nginx-module-${SETMISC_VERSION}
 SETMISC_DISTFILE=	${SETMISC_DISTNAME}.tar.gz
 SITES.${SETMISC_DISTFILE}=	-https://github.com/openresty/set-misc-nginx-module/archive/v${SETMISC_VERSION}.tar.gz
@@ -159,7 +155,7 @@ DISTFILES+=		${ARRAYVAR_DISTFILE}
 CONFIGURE_ARGS+=	--add-module=../${ENCSESS_DISTNAME}
 .endif
 .if !empty(PKG_OPTIONS:Mencrypted-session) || make(makesum)
-ENCSESS_VERSION=	0.04
+ENCSESS_VERSION=	0.05
 ENCSESS_DISTNAME=	encrypted-session-nginx-module-${ENCSESS_VERSION}
 ENCSESS_DISTFILE=	${ENCSESS_DISTNAME}.tar.gz
 SITES.${ENCSESS_DISTFILE}=	-https://github.com/openresty/encrypted-session-nginx-module/archive/v${ENCSESS_VERSION}.tar.gz
@@ -170,7 +166,7 @@ DISTFILES+=		${ENCSESS_DISTFILE}
 CONFIGURE_ARGS+=	--add-module=../${FORMINPUT_DISTNAME}
 .endif
 .if !empty(PKG_OPTIONS:Mform-input) || make(makesum)
-FORMINPUT_VERSION=	0.11
+FORMINPUT_VERSION=	0.12
 FORMINPUT_DISTNAME=	form-input-nginx-module-${FORMINPUT_VERSION}
 FORMINPUT_DISTFILE=	${FORMINPUT_DISTNAME}.tar.gz
 SITES.${FORMINPUT_DISTFILE}=	-https://github.com/calio/form-input-nginx-module/archive/v${FORMINPUT_VERSION}.tar.gz
@@ -181,7 +177,7 @@ DISTFILES+=		${FORMINPUT_DISTFILE}
 CONFIGURE_ARGS+=	--add-module=../${HEADMORE_DISTNAME}
 .endif
 .if !empty(PKG_OPTIONS:Mheaders-more) || make(makesum)
-HEADMORE_VERSION=	0.261
+HEADMORE_VERSION=	0.30
 HEADMORE_DISTNAME=	headers-more-nginx-module-${HEADMORE_VERSION}
 HEADMORE_DISTFILE=	${HEADMORE_DISTNAME}.tar.gz
 SITES.${HEADMORE_DISTFILE}=	-https://github.com/openresty/headers-more-nginx-module/archive/v${HEADMORE_VERSION}.tar.gz
@@ -196,13 +192,13 @@ CONFIGURE_ARGS+=	--without-http_uwsgi_module
 .endif
 
 .if !empty(PKG_OPTIONS:Mpush)
-CONFIGURE_ARGS+=	--add-module=../${PUSH}
+CONFIGURE_ARGS+=	--add-module=../nchan-${PUSH_VERSION}
 .endif
 .if !empty(PKG_OPTIONS:Mpush) || make(makesum)
-PUSH=			nginx_http_push_module-0.692
-PUSH_DISTFILE=		${PUSH}.tar.gz
-SITES.${PUSH_DISTFILE}=	http://pushmodule.slact.net/downloads/
-
+PUSH_VERSION=		0.731
+PUSH_DISTNAME=		nginx_http_push_module-${PUSH_VERSION}
+PUSH_DISTFILE=		${PUSH_DISTNAME}.tar.gz
+SITES.${PUSH_DISTFILE}=	-https://github.com/slact/nginx_http_push_module/archive/v${PUSH_VERSION}.tar.gz
 DISTFILES+=		${PUSH_DISTFILE}
 .endif
 
