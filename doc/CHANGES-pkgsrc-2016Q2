@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-pkgsrc-2016Q2,v 1.1.2.8 2016/07/29 16:35:38 spz Exp $
+$NetBSD: CHANGES-pkgsrc-2016Q2,v 1.1.2.18 2016/09/24 18:35:15 bsiegert Exp $
 
 Changes to packages and infrastructure on the pkgsrc-2016Q2 branch:
 
@@ -68,3 +68,77 @@ devel/cvsps: security patch
 
 Pullup ticket #5075 - requested by schmonz
 www/ikiwiki: security update
+
+Pullup ticket #5077 - requested by nils
+databases/phpmyadmin: bugfix
+
+Pullup ticket #5078 - requested by sevan
+databases/redis: security fix
+
+Pullup ticket #5079 - requested by sevan
+www/curl: security fix
+
+Pullup ticket #5080 - requested by sevan
+graphics/gd: security fix
+
+Pullup ticket #5081 - requested by bsiegert
+editors/gummi: security update
+
+Pullup ticket #5088 - requested by prlw1
+graphics/eog3: security fix
+
+Pullup ticket #5089 - requested by jym
+security/stunnel: security fix
+
+Pullup ticket #5090 - requested by sevan
+lang/python27: security fix
+
+Pullup ticket #5091 - requested by sevan
+lang/python34: security fix
+
+Pullup ticket #5092 - requested by sevan
+lang/python35: security fix
+
+Pullup ticket #5093 - requested by taca
+www/apache24: security fix
+
+Pullup ticket #5094 - requested by taca
+lang/php56: security fix
+
+Pullup ticket #5095 - requested by taca
+www/ruby-actionpack32: security fix
+
+Pullup ticket #5096 - requested by taca
+lang/php70: security fix
+
+Pullup ticket #5100 - requested by maya
+security/gnupg: security fix
+security/libgcrypt: security fix, build fix
+
+Pullup ticket #5101 - requested by maya
+databases/mysql55-client: security fix
+databases/mysql56-client: security fix
+
+Pullup ticket #5084 - requested by bsiegert
+fonts/fontconfig: security update
+
+Pullup ticket #5102 - requested by bsiegert
+devel/pcre2: security update
+
+Pullup ticket #5103 - requested by maya
+databases/mariadb55-server: security fix
+
+Pullup ticket #5104 - requested by sevan
+chat/irssi: security fix, bugfixes
+chat/irssi-icb: security fix, bugfixes
+chat/irssi-xmpp: security fix, bugfixes
+
+Pullup ticket #5105 - requested by taca
+lang/php56: security fix
+
+Pullup ticket #5106 - requested by taca
+lang/php70: security fix
+
+Pullup ticket #5107 - requested by taca
+www/typo3_62: security fix
+
