@@ -5,13 +5,7 @@ PKG_SUPPORTED_OPTIONS=	dav flv gtools inet6 luajit mail-proxy memcache naxsi \
 			pcre push realip ssl sub uwsgi image-filter \
 			debug status nginx-autodetect-cflags echo \
 			set-misc headers-more array-var encrypted-session \
-			form-input perl gzip
-.if !empty(NGINX_HTTP_V2)
-# nginx 1.9.5+ renamed spdy to v2
-PKG_SUPPORTED_OPTIONS+=	v2
-.else
-PKG_SUPPORTED_OPTIONS+=	spdy
-.endif
+			form-input perl gzip v2
 PKG_SUPPORTED_OPTIONS+=	passenger
 
 PKG_SUGGESTED_OPTIONS=	inet6 pcre ssl
