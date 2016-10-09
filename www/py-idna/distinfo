@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2015/08/06 08:08:01 wiz Exp $
+
+SHA1 (idna-2.0.tar.gz) = e48d607370b11e02512bac0985c902112c4dac40
+RMD160 (idna-2.0.tar.gz) = 25fc1b543a77722884dd93757292e02c21f9fa8c
+Size (idna-2.0.tar.gz) = 135150 bytes

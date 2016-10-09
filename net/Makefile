@@ -568,6 +568,7 @@ SUBDIR+=	py-foolscap
 SUBDIR+=	py-gevent
 SUBDIR+=	py-google
 SUBDIR+=	py-hatop
+SUBDIR+=	py-ipaddress
 SUBDIR+=	py-irclib
 SUBDIR+=	py-junos-eznc
 SUBDIR+=	py-kenosis
