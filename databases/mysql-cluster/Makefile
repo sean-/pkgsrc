@@ -1,12 +1,17 @@
-# $NetBSD: Makefile,v 1.2 2015/03/22 07:44:43 fhajny Exp $
+# $NetBSD: Makefile,v 1.13 2016/09/15 06:05:08 jnemeth Exp $
 
 PKGNAME=		${DISTNAME:S/-gpl//}
-PKGREVISION=		1
-COMMENT=		MySQL 5, a free SQL database (client)
+COMMENT=		MySQL Cluster 7.4, a free SQL clustered database
 
 CONFLICTS=		mysql*-{client,server}-[0-9]*
 
 .include "Makefile.common"
+
+PKG_GROUPS=			${MYSQL_GROUP}
+PKG_USERS=			${MYSQL_USER}:${MYSQL_GROUP}
+PKG_GECOS.${MYSQL_USER}=	MySQL database administrator
+PKG_HOME.${MYSQL_USER}=		${MYSQL_DATADIR}
+PKG_SHELL.${MYSQL_USER}=	${SH}
 
 UNWRAP_FILES+=		scripts/mysql_config
 INFO_FILES=		yes
