@@ -620,6 +620,7 @@ SUBDIR+=	py-gunicorn
 SUBDIR+=	py-http-parser
 SUBDIR+=	py-httpie
 SUBDIR+=	py-httplib2
+SUBDIR+=	py-idna
 SUBDIR+=	py-jonpy
 SUBDIR+=	py-mechanize
 SUBDIR+=	py-mezzanine
