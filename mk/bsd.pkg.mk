@@ -1,4 +1,4 @@
-#	$NetBSD: bsd.pkg.mk,v 1.2006 2014/11/25 18:27:17 joerg Exp $
+#	$NetBSD: bsd.pkg.mk,v 1.2017 2016/02/26 11:38:37 jperkin Exp $
 #
 # This file is in the public domain.
 #
@@ -163,6 +163,10 @@ PKG_FAIL_REASON+='Please unset PKG_PATH before doing pkgsrc work!'
 
 # Allow variables to be set on a per-OS basis
 OPSYSVARS+=	CFLAGS CXXFLAGS CPPFLAGS LDFLAGS LIBS
+OPSYSVARS+=	CMAKE_ARGS CONFIGURE_ARGS CONFIGURE_ENV
+OPSYSVARS+=	BUILDLINK_TRANSFORM SUBST_CLASSES
+OPSYSVARS+=	BUILD_TARGET MAKE_ENV MAKE_FLAGS USE_TOOLS
+OPSYSVARS+=	PKG_SUPPORTED_OPTIONS PKG_SUGGESTED_OPTIONS
 .for _var_ in ${OPSYSVARS:O}
 .  if defined(${_var_}.${OPSYS})
 ${_var_}+=	${${_var_}.${OPSYS}}
