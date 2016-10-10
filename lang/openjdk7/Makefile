@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.105 2015/12/14 23:05:11 asau Exp $
+# $NetBSD: Makefile,v 1.110 2016/08/11 15:34:48 abs Exp $
 
 JDK_MICRO=	80
 DISTNAME=	openjdk-1.7.${JDK_MICRO}-20150609
 PKGNAME=	openjdk7-1.7.${JDK_MICRO}
-PKGREVISION=	1
+PKGREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL:=openjdk7/}
 EXTRACT_SUFX=	.tar.xz
@@ -20,7 +20,7 @@ DIST_SUBDIR=	openjdk7
 
 JAVA_NAME=	openjdk7
 JAVA_HOME=	${PREFIX}/java/${JAVA_NAME}
-JAVA_WRAPPERS=	jar java javac javadoc javah javap jps keytool orbd \
+JAVA_WRAPPERS=	jar java javac javadoc javah javap jcmd jps keytool orbd \
 		policytool rmid rmiregistry servertool tnameserv
 
 MAKE_ENV+=		PKGSRC_ZIPEXE=${TOOLS_PATH.zip}
@@ -35,6 +35,9 @@ USE_TOOLS+=		gmake pax unzip:run zip:run # patch
 UNLIMIT_RESOURCES=	datasize stacksize
 WRKSRC=			${WRKDIR}/openjdk
 PLIST_SRC+=		${PLIST_SRC_DFLT}
+CHECK_SHLIBS_SKIP=	java/openjdk7/jre/lib/${LIBDIR_ARCH}/libfontmanager.so
+CHECK_SHLIBS_SKIP+=	java/openjdk7/jre/lib/${LIBDIR_ARCH}/libjawt.so
+CHECK_SHLIBS_SKIP+=	java/openjdk7/jre/lib/${LIBDIR_ARCH}/libsunec.so
 
 BUILDLINK_PASSTHRU_DIRS+=	${ALT_BOOTDIR}
 PREPEND_PATH+=			${ALT_BOOTDIR}/bin
