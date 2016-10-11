@@ -15,6 +15,10 @@ BUILD_MAKE_FLAGS=	PGXS=1
 BUILD_DIRS=		src/pl/plperl
 MAKE_FILE=		GNUmakefile
 
+# There is some dependency ordering problem in the Makefile,
+# so force the headers to be generated first.
+BUILD_TARGET=		perlchunks.h plperl_opmask.h all
+
 .include "../../databases/postgresql94-client/buildlink3.mk"
 .include "../../lang/perl5/module.mk"
 .include "../../mk/bsd.pkg.mk"
