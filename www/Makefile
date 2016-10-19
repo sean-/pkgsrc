@@ -501,6 +501,7 @@ SUBDIR+=	p5-URI-Find
 SUBDIR+=	p5-URI-FromHash
 SUBDIR+=	p5-URI-Nested
 SUBDIR+=	p5-URI-db
+SUBDIR+=	p5-URI-ws
 SUBDIR+=	p5-VRML
 SUBDIR+=	p5-WWW-Amazon-Wishlist
 SUBDIR+=	p5-WWW-CSRF
