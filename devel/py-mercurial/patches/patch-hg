@@ -1,0 +1,18 @@
+$NetBSD$
+
+Fix Python libdir under MULTIARCH.
+
+--- hg.orig	2014-12-18 20:59:22.000000000 +0000
++++ hg
+@@ -15,7 +15,10 @@ if os.environ.get('HGUNICODEPEDANTRY', F
+     sys.setdefaultencoding("undefined")
+ 
+ 
+-libdir = '@LIBDIR@'
++if os.environ.get('ABI') == '64':
++    libdir = '@LIBDIR64@'
++else:
++    libdir = '@LIBDIR32@'
+ 
+ if libdir != '@' 'LIBDIR' '@':
+     if not os.path.isabs(libdir):
