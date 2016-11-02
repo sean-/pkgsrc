@@ -1,4 +1,4 @@
-$NetBSD: patch-curl-config.in,v 1.4.12.1 2015/09/09 20:28:44 tron Exp $
+$NetBSD: patch-curl-config.in,v 1.7 2015/08/08 02:44:16 spz Exp $
 
 - make "curl-config --libs" return proper ldflags for shared libraries
 
