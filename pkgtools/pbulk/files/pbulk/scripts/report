@@ -110,17 +110,15 @@ echo "Uploading report..."
 } | {
 	if [ -n "${report_manta_target}" ]; then
 		# Variables sourced from pbulk.conf
-		export MANTA_USER MANTA_KEY_ID MANTA_URL
-		PATH=$MANTA_PATH:$PATH
-		# XXX: rewrite file generation to avoid rsync+tar
-		reportdir="/var/tmp/report-$$"
-		${rsync} -a --exclude-from=- --delete-excluded . ${reportdir}/
-		(cd ${reportdir}; @TAR@ -zcf /var/tmp/manta.tar.gz .)
-		mput -f /var/tmp/manta.tar.gz /${MANTA_USER}/stor/${report_subject_prefix}-${build_start_dir}.tar.gz
-		echo /${MANTA_USER}/stor/${report_subject_prefix}-${build_start_dir}.tar.gz \
-		    | mjob create -qo -m gzcat -m "muntar -f \$MANTA_INPUT_FILE ${report_manta_target}/${build_start_dir}"
-		mrm /${MANTA_USER}/stor/${report_subject_prefix}-${build_start_dir}.tar.gz
-		rm -rf /var/tmp/manta.tar.gz ${reportdir}
+		export MANTA_USER MANTA_KEY_ID MANTA_URL MANTA_SUBUSER
+		PATH=${MANTA_PATH}:${PATH}
+		# Output directory only needs to not exist or be empty.
+		tmpdir="${bulklog}/pbulk-rsync-dir"
+		tmptar="${bulklog}/pbulk-rsync.tar"
+		rm -rf ${tmpdir} ${tmptar}
+		${rsync} -rn --exclude-from=- --out-format='%n' . ${tmpdir} \
+		    | grep -v '/$' | @TAR@ -cf ${tmptar} -T -
+		muntar -f ${tmptar} ${report_manta_target}/${build_start_dir}
 	else
 		${rsync} --exclude-from=- ${report_rsync_args} . ${report_rsync_target}/${build_start_dir}
 	fi
