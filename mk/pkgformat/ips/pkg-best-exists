@@ -1,0 +1,33 @@
+#!/sbin/sh
+#
+# pkg-best-exists <pattern>
+#
+# env vars:
+# PKG_ADMIN
+#
+
+pattern=$1; shift
+
+#
+# Try to extract the pkgname from the pattern
+#
+pkg="${pattern%-\[*}"
+pkg="${pkg%>*}"
+pkg="${pkg%<*}"
+
+pkg info -q ${pkg} >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+	exit 1
+fi
+ver=$(pkg info ${pkg} | awk '/Version:/ {print $NF}')
+rev=$(pkg info ${pkg} | awk '/Branch:/ {print $NF}')
+if [ -n "${rev}" ] && [ $rev -gt 0 ]; then
+	pkgstr="${pkg}-${ver}nb${rev}"
+else
+	pkgstr="${pkg}-${ver}"
+fi
+${PKG_ADMIN} pmatch ${pattern} ${pkgstr} >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+	exit 1
+fi
+echo "${pkgstr}"

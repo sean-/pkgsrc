@@ -1,0 +1,27 @@
+Work-in-progress of an IPS pkgformat backend for pkgsrc.
+
+Get going:
+
+  $ cd bootstrap
+  $ ./bootstrap --prefix=/opt/pkg-ips --packages=/opt/pkg-ips-repo --pkgformat=ips
+
+What works:
+
+  - bootstrap, you should end up with a working install and a pkg5 repo under
+    $PACKAGES
+  - creating basic packages
+  - basic dependency handling
+
+What doesn't work:
+
+  - everything else :)
+  - main work will be to dig out lots of hardcoded references to pkg_install,
+    and handling dependencies correctly.
+  - how to handle pkg5 repos properly?
+  - verify lots of the pkg* commands + mogrify bits, I have very little clue
+    about this stuff so while it "works" it's probably not correct.
+  - lots of tidying in mk/pkgformat/ips, currently mostly a copy of pkg.
+
+Basically, everything specific to IPS should be contained under
+mk/pkgformat/ips, and everything else under mk which currently assumes
+pkg_install and mk/pkgformat/pkg needs to be made generic to support both.

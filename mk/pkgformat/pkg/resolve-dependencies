@@ -32,9 +32,9 @@ error_msg() {
 find_best() {
 	case $1 in
 	bootstrap|tool)
-		${HOST_PKG_INFO} -E "$2" || ${TRUE};;
+		${_HOST_PKG_BEST_EXISTS} "$2";;
 	build|full)
-		${PKG_INFO} -E "$2" || ${TRUE};;
+		${_PKG_BEST_EXISTS} "$2";;
 	esac
 }
 

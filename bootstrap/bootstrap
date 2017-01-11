@@ -64,7 +64,9 @@ usage="Usage: $0 "'
     [ --help ]
     [ --make-jobs <num> ]
     [ --mk-fragment <mk.conf> ]
+    [ --packages <packagedir> ]
     [ --pkgdbdir <pkgdbdir> ]
+    [ --pkgformat [ips|pkg] ]
     [ --pkginfodir <pkginfodir> ]
     [ --pkgmandir <pkgmandir> ]
     [ --prefer-pkgsrc <list|yes|no> ]
@@ -400,6 +402,7 @@ echo_msg "bootstrap started: $build_start"
 # ensure system locations are empty; we will set them later when we know
 # whether they will be system wide or user specific
 prefix=
+packages=
 pkgdbdir=
 pkginfodir=
 pkgmandir=
@@ -411,6 +414,7 @@ cwrappers=no
 full=no
 make_jobs=1
 mk_fragment=
+pkgformat=
 quiet=no
 
 while [ $# -gt 0 ]; do
@@ -419,8 +423,12 @@ while [ $# -gt 0 ]; do
 	--workdir)	wrkdir="$2"; shift ;;
 	--prefix=*)	prefix=`get_optarg "$1"` ;;
 	--prefix)	prefix="$2"; shift ;;
+	--packages=*)	packages=`get_optarg "$1"` ;;
+	--packages)	packages="$2"; shift ;;
 	--pkgdbdir=*)	pkgdbdir=`get_optarg "$1"` ;;
 	--pkgdbdir)	pkgdbdir="$2"; shift ;;
+	--pkgformat=*)	pkgformat=`get_optarg "$1"` ;;
+	--pkgformat)	pkgformat="$2"; shift ;;
 	--pkginfodir=*)	pkginfodir=`get_optarg "$1"` ;;
 	--pkginfodir)	pkginfodir="$2"; shift ;;
 	--pkgmandir=*)	pkgmandir=`get_optarg "$1"` ;;
@@ -469,6 +477,7 @@ done
 
 checkarg_sane_absolute_path "$wrkdir" "--workdir"
 checkarg_sane_absolute_path "$prefix" "--prefix"
+checkarg_sane_absolute_path "$packages" "--packages"
 checkarg_sane_absolute_path "$pkgdbdir" "--pkgdbdir"
 checkarg_sane_absolute_path "$sysconfdir" "--sysconfdir"
 checkarg_sane_absolute_path "$varbase" "--varbase"
@@ -485,6 +494,7 @@ elif [ -z "$prefix" -o "$prefix" = "/usr/pkg" ]; then
 fi
 
 [ -z "$varbase" ] && varbase=${prefix}/var
+[ -z "$packages" ] && packages=${pkgsrcdir}/packages
 [ -z "$pkgdbdir" ] && pkgdbdir=${prefix}/pkgdb
 
 if [ "$prefix" = "/usr" ]; then
@@ -1060,6 +1070,10 @@ if [ "$unprivileged" = "yes" ]; then
 fi
 
 # save environment in example mk.conf
+if [ -n "$pkgformat" ]; then
+	echo "PKG_FORMAT=		$pkgformat" >> ${TARGET_MKCONF}
+fi
+echo "PACKAGES=			$packages" >> ${TARGET_MKCONF}
 echo "PKG_DBDIR=		$pkgdbdir" >> ${TARGET_MKCONF}
 echo "LOCALBASE=		$prefix" >> ${TARGET_MKCONF}
 echo "VARBASE=		$varbase" >> ${TARGET_MKCONF}
@@ -1298,6 +1312,23 @@ build_package() {
 build_package_nopreserve() {
 	run_cmd "(cd $pkgsrcdir/$1 && $bmake $make_quiet_flags MAKE_JOBS=${make_jobs} PKG_COMPRESSION=none MAKECONF=${BOOTSTRAP_MKCONF} install)"
 }
+
+case "$pkgformat" in
+ips)
+	# Create all directories required by bootstrap --full and
+	# register in IPS.
+	mkdir_p $wrkdir/.destdir/$prefix/bin $wrkdir/.destdir/$prefix/sbin $wrkdir/.destdir/$prefix/share/mk $wrkdir/.destdir/$sysconfdir $wrkdir/.destdir/$mandir
+	p5m=$wrkdir/bootstrap-dirs.p5m
+	pkgsend generate $wrkdir/.destdir >${p5m}.1
+        echo "set name=pkg.fmri value=pkg://pkgsrc/bootstrap/bootstrap-dirs@0,5.11-0" >${p5m}.2
+        echo "set name=pkg.summary value=\"Required bootstrap directories\"" >>${p5m}.2
+	pkgmogrify ${p5m}.1 ${p5m}.2 ${pkgsrcdir}/mk/pkgformat/ips/mogrify | pkgfmt -u >$p5m
+	pkgrepo create ${packages}
+	pkgrepo add-publisher -s ${packages} pkgsrc
+	pkgsend publish -s ${packages} -d $prefix ${p5m}
+	pkg install -g ${packages} bootstrap-dirs@0
+	;;
+esac
 
 #
 # cwrappers is special, we don't want to set it as a BOOTSTRAP_PKG but must

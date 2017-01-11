@@ -1,0 +1,22 @@
+#!/sbin/sh
+#
+# pkg-version <package>
+#
+# env vars:
+# PKG_ADMIN
+#
+
+pkg=$1; shift
+
+pkg info -q ${pkg} >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+	exit 1
+fi
+ver=$(pkg info ${pkg} | awk '/Version:/ {print $NF}')
+rev=$(pkg info ${pkg} | awk '/Branch:/ {print $NF}')
+if [ -n "${rev}" ] && [ $rev -gt 0 ]; then
+	pkgstr="${pkg}-${ver}nb${rev}"
+else
+	pkgstr="${pkg}-${ver}"
+fi
+echo "${pkgstr}"

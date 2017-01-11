@@ -348,6 +348,11 @@ BUILDLINK_PREFIX.${_pkg_}?=	# empty
 BUILDLINK_LIBDIRS.${_pkg_}?=	lib${LIBABISUFFIX}
 .    endif
 .  endif
+.  if ${PKG_FORMAT} == "ips"
+_BLNK_PKG_DBDIR.${_pkg_}?=	_BLNK_PKG_DBDIR.${_pkg_}_not_found
+_BLNK_PKG_INFO.${_pkg_}?=	${TRUE}
+BUILDLINK_PKGNAME.${_pkg_}?=	${_pkg_}
+.  endif
 #
 # Set a default for _BLNK_PKG_DBDIR.<pkg>, which is the directory
 # containing the package metadata.
@@ -377,9 +382,11 @@ _BLNK_PKG_INFO.${_pkg_}?=	${PKG_INFO_CMD} -K ${_PKG_DBDIR}
 .  endif
 
 BUILDLINK_PKGNAME.${_pkg_}?=	${_BLNK_PKG_DBDIR.${_pkg_}:T}
+
 #
 # Set BUILDLINK_PREFIX.<pkg> to the "PREFIX" value for the package.
 #
+BUILDLINK_PREFIX.${_pkg_}?=	${PREFIX}
 .  if !defined(BUILDLINK_PREFIX.${_pkg_})
 .    if empty(BUILDLINK_PKGNAME.${_pkg_}:M*not_found)
 BUILDLINK_PREFIX.${_pkg_}!=						\
@@ -622,10 +629,17 @@ buildlink-${_pkg_}-cookie:
 BUILDLINK_CONTENTS_FILTER.${_pkg_}?=					\
 	${EGREP} '(include.*/|\.h$$|\.idl$$|\.pc$$|/lib[^/]*\.[^/]*$$)'
 # XXX: Why not pkg_info -qL?
+.if ${PKG_FORMAT} == "pkg"
 BUILDLINK_FILES_CMD.${_pkg_}?=						\
 	${_BLNK_PKG_INFO.${_pkg_}} -f ${BUILDLINK_PKGNAME.${_pkg_}} |	\
 	${SED} -n '/File:/s/^[ 	]*File:[ 	]*//p' |		\
 	${BUILDLINK_CONTENTS_FILTER.${_pkg_}} | ${CAT}
+.elif ${PKG_FORMAT} == "ips"
+BUILDLINK_FILES_CMD.${_pkg_}?=						\
+	pkg contents -H ${BUILDLINK_PKGNAME.${_pkg_}} |			\
+	${SED} -e 's,${PREFIX:C/^\///}/,,' |				\
+	${BUILDLINK_CONTENTS_FILTER.${_pkg_}} | ${CAT}
+.endif
 
 # _BLNK_FILES_CMD.<pkg> combines BUILDLINK_FILES_CMD.<pkg> and
 # BUILDLINK_FILES.<pkg> into one command that outputs all of the files

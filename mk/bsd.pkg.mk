@@ -31,7 +31,7 @@
 
 PKGBASE?=		${PKGNAME:C/-[^-]*$//}
 PKGVERSION?=		${PKGNAME:C/^.*-//}
-.if defined(PKGREVISION) && !empty(PKGREVISION) && (${PKGREVISION} != "0")
+.if defined(PKGREVISION) && !empty(PKGREVISION) && (${PKGREVISION} != "0") && ${PKG_FORMAT} == "pkg"
 .  if defined(PKGNAME)
 PKGNAME_NOREV:=		${PKGNAME}
 PKGNAME:=		${PKGNAME}nb${PKGREVISION}
