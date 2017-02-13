@@ -54,6 +54,8 @@ case "${master_mode}" in
 	;;
 esac
 
+${client_cleanup}
+
 date '+BUILD_END_ISO=%Y-%m-%d %H:%M' >> ${loc}/status
 
 echo "Building pkg_summary..."

@@ -21,24 +21,26 @@ ${client_prepare}
 
 for client in ${scan_clients}; do
 	case ${client} in
-	/*)
-		path=${client}
-		port=
-		client=
-		;;
 	*:*)
-		path=
 		port="-p ${client##*:}"
 		client=${client%%:*}
 		;;
 	*)
-		path=
 		port=
 		;;
 	esac
-	if [ -z "$path" ]; then
-		ssh $port $client "${pscan} -c ${master_port_scan} -M ${make} ${extra_pscan_args} ${pkgsrc}" &
+	if [ -n "$scan_chroots" ]; then
+		ssh $port $client "
+			for chrdir in ${scan_chroots}; do
+				chroot \${chrdir} @SH@ -c \"${pscan} -c ${master_port_scan} -M ${make} ${extra_pscan_args} ${pkgsrc}\" &
+			done" &
 	else
-		chroot "$path" ${pscan} -c ${master_port_scan} -M ${make} ${extra_pscan_args} ${pkgsrc} &
+		ssh $port $client "${pscan} -c ${master_port_scan} -M ${make} ${extra_pscan_args} ${pkgsrc}" &
 	fi
 done
+
+if [ -z "${scan_clients}" -a -n "${scan_chroots}" ]; then
+	for chrdir in ${scan_chroots}; do
+		chroot ${chrdir} @SH@ -c "${pscan} -c ${master_port_scan} -M ${make} ${extra_pscan_args} ${pkgsrc}" &
+	done
+fi

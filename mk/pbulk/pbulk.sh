@@ -2,10 +2,11 @@
 # $Id: pbulk.sh,v 1.3 2015/12/14 21:12:01 asau Exp $
 set -e
 
-usage="usage: ${0##*/} [-lun] [-c mk.conf.fragment] [-d nodes]"
+usage="usage: ${0##*/} [-lun] [-C numchroots] [-c mk.conf.fragment] [-d nodes]"
 
-while getopts lunc:d: opt; do
+while getopts C:lunc:d: opt; do
     case $opt in
+	C) chroots="${OPTARG}";;
 	l) limited=yes;;
 	u) unprivileged=yes;;
 	n) native=yes;;
@@ -32,6 +33,7 @@ fi
 : ${PBULKPREFIX:=/usr/pbulk}
 : ${PBULKWORK:=${TMPDIR}/work-pbulk}
 
+: ${PREFIX:=/usr/pkg}
 : ${PACKAGES:=/mnt/packages}
 : ${BULKLOG:=/mnt/bulklog}
 
@@ -72,6 +74,9 @@ rm -f ${TMPDIR}/pbulk.mk
 
 # - installing pbulk
 (cd ${PKGSRCDIR}/pkgtools/pbulk && PACKAGES=${TMPDIR}/packages-pbulk WRKOBJDIR=${TMPDIR}/obj-pbulk ${PBULKPREFIX}/bin/bmake install)
+if [ -n "${chroots}" ]; then
+(cd ${PKGSRCDIR}/pkgtools/mksandbox && PACKAGES=${TMPDIR}/packages-pbulk WRKOBJDIR=${TMPDIR}/obj-pbulk ${PBULKPREFIX}/bin/bmake install)
+fi
 rm -rf ${TMPDIR}/obj-pbulk
 rm -rf ${TMPDIR}/packages-pbulk
 
@@ -124,15 +129,15 @@ unprivileged_user=$(id -un)
 pkgsrc=${PKGSRCDIR}
 prefix=${PREFIX}
 varbase=${PREFIX}/var
-pkgdb=${PREFIX}/var/db/pkg
+pkgdb=${PREFIX}/pkgdb
 EOF
-elif [ -n "${PREFIX}" ]; then
+elif [ -z "$native" ]; then
 # Non-default prefix:
 cat >> ${PBULKPREFIX}/etc/pbulk.conf.over <<EOF
 # Non-default prefix overrides:
 prefix=${PREFIX}
 varbase=${PREFIX}/var
-pkgdb=${PREFIX}/var/db/pkg
+pkgdb=${PREFIX}/pkgdb
 EOF
 fi
 
@@ -167,6 +172,21 @@ cat >> ${PBULKPREFIX}/etc/pbulk.conf.over <<"EOF"
 # Recompute dependent settings:
 master_port_scan=${master_ip}:2001
 master_port_build=${master_ip}:2002
+EOF
+# Local chrooted build:
+elif [ -n "$chroots" ]; then
+cat >> ${PBULKPREFIX}/etc/pbulk.conf.over <<EOF
+# Local chrooted build overrides:
+master_mode=yes
+master_ip=127.0.0.1
+master_port_scan=\${master_ip}:2001
+master_port_build=\${master_ip}:2002
+scan_clients=
+build_clients=
+scan_chroots="\$(seq 1 ${chroots} | xargs -I{} echo /mnt/chroot-{})"
+build_chroots="\${scan_chroots}"
+client_prepare_chroot=client_chroot_mksandbox
+client_cleanup_chroot=client_chroot_rmsandbox
 EOF
 fi
 

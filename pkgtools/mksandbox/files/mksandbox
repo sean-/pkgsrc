@@ -173,6 +173,7 @@ esac
 
 while [ $# -gt 0 ]; do
 	case "$1" in
+	--make=*)		bmakeprog=`echo $1 | $sedprog -e 's|^--make=||'` ;;
 	--mounthost=*)		mounthost=`echo $1 | $sedprog -e 's|^--mounthost=||'` ;;
 	--pkgsrc=*)		pkgsrc=`echo $1 | $sedprog -e 's|^--pkgsrc=||'` ;;
 	--src=*)		src=`echo $1 | $sedprog -e 's|^--src=||'` ;;

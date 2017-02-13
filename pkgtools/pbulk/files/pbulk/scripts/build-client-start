@@ -13,24 +13,26 @@ fi
 
 for client in ${build_clients}; do
 	case ${client} in 
-	/*)
-		path=${client}
-		port=
-		client=
-		;;
 	*:*)
-		path=
 		port="-p ${client##*:}"
 		client=${client%%:*}
 		;;
 	*)
-		path=
 		port=
 		;;
 	esac
-	if [ -z "$path" ]; then
-		ssh $port $client "${pbuild} -c ${master_port_build} -b ${pbuild_script}" &
+	if [ -n "$build_chroots" ]; then
+		ssh $port $client "
+			for chrdir in ${build_chroots}; do
+				chroot \${chrdir} @SH@ -c \"${pbuild} -c ${master_port_build} -b ${pbuild_script}\" &
+			done" &
 	else
-		chroot "$path" ${pbuild} -c ${master_port_build} -b ${pbuild_script} &
+		ssh $port $client "${pbuild} -c ${master_port_build} -b ${pbuild_script}" &
 	fi
 done
+
+if [ -z "${build_clients}" -a -n "${build_chroots}" ]; then
+	for chrdir in ${build_chroots}; do
+		chroot ${chrdir} @SH@ -c "${pbuild} -c ${master_port_build} -b ${pbuild_script}" &
+	done
+fi
