@@ -1,4 +1,4 @@
-$NetBSD: distinfo,v 1.269 2017/01/27 13:28:11 ryoon Exp $
+$NetBSD: distinfo,v 1.273 2017/02/16 02:25:16 maya Exp $
 
 SHA1 (firefox-51.0.1.source.tar.xz) = b73255fd4f90fd0c1b107b566679da2df3f31cf1
 RMD160 (firefox-51.0.1.source.tar.xz) = 6acc6fc8e3e317842d75b0233a24b0f19c9d3f34
@@ -6,7 +6,7 @@ SHA512 (firefox-51.0.1.source.tar.xz) = 556e31b717c0640ef5e181e00b9d2a6ea0ace7c1
 Size (firefox-51.0.1.source.tar.xz) = 202142716 bytes
 SHA1 (patch-aa) = 42dbb30745fc0e40cf582376c8fbfcd0715fcf5e
 SHA1 (patch-ao) = 1564bc503670dc07ec8b9b43927f0c5879f3a44d
-SHA1 (patch-as) = d01c9173f1055cbafff4b08bcd5bbbc2eca63044
+SHA1 (patch-as) = 632ebd35287f8f97d18721d39a0514d4cdbb12cc
 SHA1 (patch-browser_app_nsBrowserApp.cpp) = f109f5430e1b9fd11f8263d756bea0572b8ffa20
 SHA1 (patch-browser_components_nsBrowserGlue.js) = 01eef808fadc361215e60e44d79cfc8a4336107f
 SHA1 (patch-browser_installer_package-manifest.in) = d1f003f9ac65e12eb04b1d19a4d9a780bded9fd9
@@ -14,6 +14,7 @@ SHA1 (patch-browser_themes_shared_icon-colors.inc.svg) = 222924b45ceb00d712cbc5b
 SHA1 (patch-build_autoconf_toolchain.m4) = f7f5ad59a7cefbc7989e99f10b48520f1bd4bad1
 SHA1 (patch-build_gyp.mozbuild) = 481270e6703e556fb87a3440cb3cfb3d4fcc4c86
 SHA1 (patch-build_moz.configure_init.configure) = f2df0c6b92aa825a61f6a4ee1f70f5443c61858e
+SHA1 (patch-build_moz.configure_memory.configure) = 46237c1415eff3f99d4889a6300ec96af925f0a6
 SHA1 (patch-build_moz.configure_old.configure) = 143e1d0b416b33ae92950f347898cf6ed22d0f6f
 SHA1 (patch-build_moz.configure_toolchain.configure) = f02501a573b65f3e9c793c6146f26dd1d3e19222
 SHA1 (patch-build_pgo_profileserver.py) = 48ad50f716eda2157cbc225298f6672f164b4207
@@ -33,10 +34,14 @@ SHA1 (patch-dom_plugins_ipc_PluginModuleChild.cpp) = 9961e956016f274a1b9b52b489b
 SHA1 (patch-dom_plugins_ipc_PluginModuleChild.h) = 15c01df2fa7f989b533ef769ce77438b5e9bfdb9
 SHA1 (patch-dom_system_OSFileConstants.cpp) = 6e5a347c317947c869415d740f25813332ee9597
 SHA1 (patch-extensions_spellcheck_hunspell_glue_mozHunspell.cpp) = 5678e4a44927326de55f1f0fd2907102b314ca10
+SHA1 (patch-gfx_2d_BorrowedContext.h) = 5efa43c865ccd95ffe82fc23db3bde7ef8bf8441
 SHA1 (patch-gfx_cairo_libpixman_src_pixman-arm-neon-asm.S) = 6e91ca436b73affe42ed4e683b3400beb28c4bc6
 SHA1 (patch-gfx_gl_GLContextProviderGLX.cpp) = 2cc997cab71a84c1f50a791693519a0626564426
 SHA1 (patch-gfx_graphite2_moz-gr-update.sh) = 09eb2fa66109d38a3aedc940fcaaee5f91e216ae
 SHA1 (patch-gfx_graphite2_src_Bidi.cpp) = 9b357196b795f7698f0763cb6cfcd39b4aea6420
+SHA1 (patch-gfx_layers_composite_LayerManagerComposite.cpp) = b3ef914b5fa735b4740d45d01478f67018532a3a
+SHA1 (patch-gfx_layers_composite_LayerManagerComposite.h) = f4d61ffaecaec7e77909d1d08b5b10837e999741
+SHA1 (patch-gfx_layers_moz.build) = e43f1b234357b0af7f58aaceb275d9d0e3468097
 SHA1 (patch-gfx_moz.build) = 0d669ac6dc1af17ea8ed7e84e4915947c2a6b1ca
 SHA1 (patch-gfx_skia_generate__mozbuild.py) = 0c1faddbda7d819a82a4f1bd97a753c835f0c81d
 SHA1 (patch-gfx_skia_moz.build) = 1def6cf3bce77e9294c0f05f62a33b7baed12b12
@@ -73,7 +78,7 @@ SHA1 (patch-js_xpconnect_src_XPCConvert.cpp) = 915777e9bb5366be41866cdb6ea0ad2b1
 SHA1 (patch-js_xpconnect_src_xpcprivate.h) = e09e37819961bae40a9f276ae1ee510d2956c23e
 SHA1 (patch-layout_style_GenerateCSSPropsGenerated.py) = 6e2267d2ffda97923e6e39ed2517f86fb7316b86
 SHA1 (patch-media_libcubeb_src_cubeb.c) = 91eb24595c423b7e086670bb67e73cfd0bfb5559
-SHA1 (patch-media_libcubeb_src_cubeb__alsa.c) = 4c5bb4b095048fb34695f04a052f8fee0c8a44ed
+SHA1 (patch-media_libcubeb_src_cubeb__alsa.c) = c59eaf40973193885f32819b465b401c1ba45fce
 SHA1 (patch-media_libcubeb_src_cubeb__oss.c) = e15cc2d0c220738ccfd57f79eec242095c8ea536
 SHA1 (patch-media_libcubeb_src_moz.build) = 2b6d7e3bb265220decf9629b1d4b980cadb363fb
 SHA1 (patch-media_libcubeb_tests_moz.build) = 63d8b749a6ebbe8fd662ce1e2bde6aa9cb0b807d

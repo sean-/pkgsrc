@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1146 2017/01/24 17:22:09 bsiegert Exp $
+# $NetBSD: Makefile,v 1.1149 2017/02/13 17:20:06 adam Exp $
 #
 
 COMMENT=	Networking tools
@@ -440,6 +440,7 @@ SUBDIR+=	p5-DNS-LDNS
 SUBDIR+=	p5-DNS-ZoneParse
 SUBDIR+=	p5-Danga-Socket
 SUBDIR+=	p5-Data-Stream-Bulk
+SUBDIR+=	p5-File-Rsync
 SUBDIR+=	p5-File-RsyncP
 SUBDIR+=	p5-FusionInventory-Agent
 SUBDIR+=	p5-FusionInventory-Agent-Task-Network
@@ -642,6 +643,7 @@ SUBDIR+=	py-netifaces
 SUBDIR+=	py-netsnmp
 SUBDIR+=	py-omniORBpy
 SUBDIR+=	py-pcap
+SUBDIR+=	py-portend
 SUBDIR+=	py-ptt
 SUBDIR+=	py-pydns
 SUBDIR+=	py-s3cmd
@@ -706,6 +708,7 @@ SUBDIR+=	ruby-netrc
 SUBDIR+=	ruby-pluggaloid
 SUBDIR+=	ruby-public_suffix
 SUBDIR+=	ruby-rubytter
+SUBDIR+=	ruby-slack-api
 SUBDIR+=	ruby-snmp
 SUBDIR+=	ruby-soap4r
 SUBDIR+=	ruby-stompserver

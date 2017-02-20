@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.903 2017/01/25 14:12:23 wiz Exp $
+# $NetBSD: Makefile,v 1.908 2017/02/19 02:01:46 minskim Exp $
 #
 
 COMMENT=	Text processing utilities (does not include desktop publishing)
@@ -494,6 +494,7 @@ SUBDIR+=	p5-String-CRC32
 SUBDIR+=	p5-String-CamelCase
 SUBDIR+=	p5-String-Compare-ConstantTime
 SUBDIR+=	p5-String-Errf
+SUBDIR+=	p5-String-Expand
 SUBDIR+=	p5-String-Flogger
 SUBDIR+=	p5-String-Formatter
 SUBDIR+=	p5-String-Koremutake
@@ -737,11 +738,13 @@ SUBDIR+=	py-libxml2
 SUBDIR+=	py-libxslt
 SUBDIR+=	py-loremipsum
 SUBDIR+=	py-lxml
+SUBDIR+=	py-m2r
 SUBDIR+=	py-marisa
 SUBDIR+=	py-markdown
 SUBDIR+=	py-markdown2
 SUBDIR+=	py-markupsafe
 SUBDIR+=	py-mecab
+SUBDIR+=	py-mistune
 SUBDIR+=	py-mkdocs
 SUBDIR+=	py-mkdocs-bootstrap
 SUBDIR+=	py-mkdocs-bootswatch
@@ -797,6 +800,7 @@ SUBDIR+=	ruby-amrita
 SUBDIR+=	ruby-bluecloth
 SUBDIR+=	ruby-buftok
 SUBDIR+=	ruby-builder
+SUBDIR+=	ruby-builder30
 SUBDIR+=	ruby-cabocha
 SUBDIR+=	ruby-classifier-reborn
 SUBDIR+=	ruby-coderay
@@ -907,6 +911,7 @@ SUBDIR+=	unroff
 SUBDIR+=	untex
 SUBDIR+=	uriparser
 SUBDIR+=	urlview
+SUBDIR+=	verify-synopsis
 SUBDIR+=	vis
 SUBDIR+=	wbxml2
 SUBDIR+=	wdiff

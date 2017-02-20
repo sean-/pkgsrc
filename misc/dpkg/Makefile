@@ -1,9 +1,7 @@
-# $NetBSD: Makefile,v 1.37 2017/01/04 21:38:32 roy Exp $
-#
+# $NetBSD: Makefile,v 1.39 2017/02/08 10:13:29 wiz Exp $
 
-DISTNAME=	dpkg_1.16.17
+DISTNAME=	dpkg_1.18.22
 PKGNAME=	${DISTNAME:S/_/-/}
-PKGREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=pool/main/d/dpkg/}
 EXTRACT_SUFX=	.tar.xz
@@ -13,7 +11,7 @@ HOMEPAGE=	http://wiki.debian.org/Teams/Dpkg
 COMMENT=	Package maintenance system for Debian
 LICENSE=	gnu-gpl-v2
 
-BUILD_DEPENDS+=		po4a>=0:../../textproc/po4a
+BUILD_DEPENDS+=		po4a-[0-9]*:../../textproc/po4a
 
 WRKSRC=		${WRKDIR}/${PKGNAME_NOREV}
 BUILD_DEFS+=	VARBASE
@@ -22,26 +20,16 @@ USE_PKGLOCALEDIR=	yes
 GNU_CONFIGURE=		yes
 USE_LANGUAGES=		c c++
 USE_TOOLS+=		gmake msgfmt perl:run gtar:run pod2man
+TEST_TARGET=		check
 INCOMPAT_CURSES+=	NetBSD-[0-5].*-*
 
 REPLACE_PERL=		scripts/*.pl
-REPLACE_PERL+=		dselect/methods/ftp/install
-REPLACE_PERL+=		dselect/methods/ftp/setup
-REPLACE_PERL+=		dselect/methods/ftp/update
 
-CONFIGURE_ARGS+=	--with-zlib
 CONFIGURE_ARGS+=	--disable-start-stop-daemon
 CONFIGURE_ARGS+=	--with-admindir=${VARBASE}/db/dpkg
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/share/dpkg
-# or uses GCC version specific warning flags unconditionally. 
-CONFIGURE_ARGS+=	--disable-compiler-warnings
 
-CONFIGURE_ARGS.Darwin+=	--enable-linker-optimisations=no
-
-SUBST_CLASSES+=		tool-path
-SUBST_STAGE.tool-path=	pre-build
-SUBST_VARS.tool-path=	GTAR
-SUBST_FILES.tool-path=	lib/dpkg/dpkg.h
+CONFIGURE_ARGS.Darwin+=	--enable-linker-optimizations=no
 
 .include "../../archivers/bzip2/buildlink3.mk"
 .include "../../archivers/xz/buildlink3.mk"

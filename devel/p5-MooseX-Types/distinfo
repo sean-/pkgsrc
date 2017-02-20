@@ -1,6 +1,6 @@
-$NetBSD: distinfo,v 1.23 2016/12/11 08:45:38 wen Exp $
+$NetBSD: distinfo,v 1.25 2017/02/12 03:23:19 wen Exp $
 
-SHA1 (MooseX-Types-0.48.tar.gz) = f1484e40915056ba2eb1ab364f57065cb277ecf2
-RMD160 (MooseX-Types-0.48.tar.gz) = ca18a110526199d99c8a2de541e7a62732488bc7
-SHA512 (MooseX-Types-0.48.tar.gz) = 905d88141dd708865f3f592000e22894dab9c792f2ab84984187092c9464920c83c1dc199a5dfa796532a152ef2c257dd9de17ecb47947b7d7b3f2d20b55db9a
-Size (MooseX-Types-0.48.tar.gz) = 56440 bytes
+SHA1 (MooseX-Types-0.50.tar.gz) = 2fdafca1f9706e0bb61ca2d2aa1549f14146c2ef
+RMD160 (MooseX-Types-0.50.tar.gz) = 52385404ad88f73be25922de03d15136ecd59b64
+SHA512 (MooseX-Types-0.50.tar.gz) = 42606b1caeb6423acaaa9288239c63512f398a2fba45492443d3e003c6ae3e93cbd8ea2631d487e428ea7d25b63744e4c2096a1e53012e262c99ff4b0c29484b
+Size (MooseX-Types-0.50.tar.gz) = 57252 bytes

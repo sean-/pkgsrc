@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.137 2017/01/21 20:06:47 ryoon Exp $
+# $NetBSD: Makefile,v 1.140 2017/02/12 06:25:04 ryoon Exp $
 
-DISTNAME=		mpd-0.20.2
+DISTNAME=		mpd-0.20.4
 PKGNAME=		${DISTNAME:S/mpd/musicpd/}
 PKGREVISION=		2
 CATEGORIES=		audio

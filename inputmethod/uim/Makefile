@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.121 2017/01/01 16:06:23 adam Exp $
+# $NetBSD: Makefile,v 1.123 2017/02/12 06:25:37 ryoon Exp $
 #
 
 .include "../../inputmethod/uim/Makefile.common"
 
-PKGREVISION=		34
+PKGREVISION=		36
 COMMENT=		Multilingual input method library
 #LICENSE=		See ${WRKSRC}/COPYING
 

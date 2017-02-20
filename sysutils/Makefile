@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.688 2017/02/01 13:13:23 mef Exp $
+# $NetBSD: Makefile,v 1.691 2017/02/17 21:23:42 jmmv Exp $
 #
 
 COMMENT=	System utilities
@@ -415,6 +415,7 @@ SUBDIR+=	p5-Sys-SigAction
 SUBDIR+=	p5-Sys-Syslog
 SUBDIR+=	p5-Sys-Utmp
 SUBDIR+=	p5-UPS-Nut
+SUBDIR+=	p5-Unburden-Home-Dir
 SUBDIR+=	p5-Unix-ConfigFile
 SUBDIR+=	p5-Unix-Statgrab
 SUBDIR+=	p5-Unix-Syslog
@@ -480,6 +481,7 @@ SUBDIR+=	rsyslog-libgcrypt
 SUBDIR+=	rsyslog-mysql
 SUBDIR+=	rsyslog-pgsql
 SUBDIR+=	rsyslog-rabbitmq
+SUBDIR+=	rsyslog-relp
 SUBDIR+=	rsyslog-snmp
 SUBDIR+=	rtty
 SUBDIR+=	ruby-activesambaldap
@@ -501,6 +503,7 @@ SUBDIR+=	safetynet
 SUBDIR+=	salt
 SUBDIR+=	salt-docs
 SUBDIR+=	same
+SUBDIR+=	sandboxctl
 SUBDIR+=	sarah
 SUBDIR+=	screenbrightness
 SUBDIR+=	screenfetch

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.599 2017/01/28 01:19:06 wiz Exp $
+# $NetBSD: Makefile,v 1.601 2017/02/14 00:39:17 khorben Exp $
 #
 
 COMMENT=	Security tools
@@ -374,6 +374,7 @@ SUBDIR+=	py-Des
 SUBDIR+=	py-OpenSSL
 SUBDIR+=	py-SSLCrypto
 SUBDIR+=	py-acme
+SUBDIR+=	py-acme-tiny
 SUBDIR+=	py-aes
 SUBDIR+=	py-asn1
 SUBDIR+=	py-asn1-modules
@@ -403,6 +404,7 @@ SUBDIR+=	py-libtaxii
 SUBDIR+=	py-m2crypto
 SUBDIR+=	py-mcrypt
 SUBDIR+=	py-ndg_httpsclient
+SUBDIR+=	py-oath
 SUBDIR+=	py-oauth
 SUBDIR+=	py-oauth2
 SUBDIR+=	py-oauth2client
