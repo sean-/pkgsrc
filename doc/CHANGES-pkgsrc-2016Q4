@@ -1,4 +1,119 @@
-$NetBSD: CHANGES-pkgsrc-2016Q4,v 1.1.2.1 2016/12/29 18:53:01 wiz Exp $
+$NetBSD: CHANGES-pkgsrc-2016Q4,v 1.1.2.14 2017/02/17 19:19:01 bsiegert Exp $
 
 Changes to packages and infrastructure on the pkgsrc-$BRANCH branch:
+
+Pullup ticket #5176 - requested by gdt
+lang/llvm: build fix
+
+Pullup ticket #5177 - requested by dholland
+editors/emacs: build fix
+
+Pullup ticket #5178 - requested by taca
+security/openssh: security fix
+
+Pullup ticket #5179 - requested by taca
+databases/phpmyadmin: security fix
+
+Pullup ticket #5180 - requested by taca
+www/contao35: security fix
+
+Pullup ticket #5181 - requested by taca
+www/contao43: security fix
+
+Pullup ticket #5182 - requested by maya
+chat/irssi: security fix
+chat/irssi-icb: security fix
+chat/irssi-xmpp: security fix
+
+Pullup ticket #5183 - requested by joerg
+devel/cmake: build fix
+
+Pullup ticket #5186 - requested by taca
+devel/ruby-rb-fsevent: build fix (for www/ruby-jekyll)
+
+Pullup ticket #5187 - requested by taca
+sysutils/ruby-listen: build fix (for www/ruby-jekyll)
+
+Pullup ticket #5188 - requested by taca
+www/ruby-jekyll-watch: build fix (for www/ruby-jekyll)
+
+Pullup ticket #5189 - requested by taca
+net/bind910: security fix
+
+Pullup ticket #5190 - requested by taca
+net/bind99: security fix
+
+Pullup ticket #5191 - requested by taca
+devel/libgit2: security fix
+
+Pullup ticket #5193 - requested by wiz
+security/libtasn1: bugfix, build fix
+
+Pullup ticket #5185 - requested by wiz
+security/gnutls: security fix
+
+Pullup ticket #5185 (second part) - requested by wiz
+security/gnutls: build fix
+
+Pullup ticket #5192 - requested by schmonz
+www/ikiwiki: security fix
+
+Pullup ticket #5194 - requested by joerg
+security/botan-devel: build fix
+
+Pullup ticket #5195 - requested by taca
+www/typo3_62: security fix
+
+Pullup ticket #5196 - requested by taca
+lang/php71: security fix
+
+Pullup ticket #5197 - requested by taca
+lang/php70: security fix
+
+Pullup ticket #5198 - requested by taca
+lang/php56: security fix
+
+Pullup ticket #5184 - requested by bsiegert
+sysutils/py-borgbackup: security update
+
+Pullup ticket #5200 - requested by wiz
+net/tor: security fix
+
+Pullup ticket #5204 - requested by sevan
+www/apache2: security fix
+
+Pullup ticket #5207 - requested by wiz
+archivers/unzip: security fix
+
+Pullup ticket #5209 - requested by wiz
+www/viewvc: security fix
+
+Pullup ticket #5205 - requested by bsiegert
+net/tcpdump: security update
+
+Pullup ticket #5206 - requested by bsiegert
+sysutils/webmin: security update
+sysutils/wbm-*: security update
+
+Pullup ticket #5203 - requested by maya
+lang/php70: build fix
+lang/php71: build fix
+
+Pullup ticket #5210 - requested by taca
+net/bind910: security update
+
+Pullup ticket #5211 - requested by taca
+net/bind99: security update
+
+Pullup ticket #5199 - requested by leot
+print/cups-filters: build fix
+
+Pullup ticket #5201 - requested by wiz
+net/tigervnc: security update
+
+Pullup ticket #5212 - requested by he
+comms/conserver8: bugfix
+
+Pullup ticket #5214 - requested by maya
+devel/memcached: security fix
 
