@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.45 2016/12/17 23:02:51 dholland Exp $
+# $NetBSD: Makefile,v 1.48 2017/02/22 11:53:49 ryoon Exp $
 
-DISTNAME=	jasper-1.900.29
-PKGREVISION=	1
+DISTNAME=	jasper-2.0.10
+PKGREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/
 
@@ -10,25 +10,13 @@ HOMEPAGE=	http://www.ece.uvic.ca/~mdadams/jasper/
 COMMENT=	Software-based reference implementation of the JPEG-2000 codec
 LICENSE=	modified-bsd
 
-USE_LANGUAGES=		c99
-USE_LIBTOOL=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--enable-shared --without-x --disable-opengl
-
-USE_TOOLS+=		gmake
-USE_TOOLS+=		pkg-config
+USE_CMAKE=		yes
+USE_LANGUAGES=		c99 c++
+CMAKE_ARGS+=		-DALLOW_IN_SOURCE_BUILD=ON
 
 PKGCONFIG_OVERRIDE=	pkgconfig/jasper.pc
 
-# The solaris stdbool.h requires c99 which is fine for jasper, but
-# not so good for things that depend upon jasper.  See PR#43901
-CONFIGURE_ENV.SunOS+=	ac_cv_header_stdbool_h=no
-
-INSTALLATION_DIRS+=	share/doc/jasper
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/jasper.pdf ${DESTDIR}${PREFIX}/share/doc/jasper
-	${INSTALL_DATA} ${WRKSRC}/doc/jpeg2000.pdf ${DESTDIR}${PREFIX}/share/doc/jasper
+.include "options.mk"
 
 .include "../../mk/jpeg.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
