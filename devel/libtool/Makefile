@@ -3,8 +3,6 @@
 META_PACKAGE=	# empty
 
 .include "Makefile.common"
-PKGREVISION=	3
-
 
 DEPENDS+=	${DISTNAME:S/-/-base-/}{,nb[0-9]*}:../../devel/libtool-base
 DEPENDS+=	${DISTNAME:S/-/-fortran-/}{,nb[0-9]*}:../../devel/libtool-fortran

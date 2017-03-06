@@ -20,11 +20,13 @@ cat /usr/pkgsrc/devel/libtool/patches/manual-* | patch -s -p0
 
 [edit *.m4 files and put patches back to manual-*]
 
+cp -f build-aux/ltmain.sh build-aux/ltmain.sh.orig
 cp -f configure configure.orig
 cp -f libltdl/configure libltdl/configure.orig
-./bootstrap
-pkgdiff configure >/usr/pkgsrc/devel/libtool/patches/patch-ab
-pkgdiff libltdl/configure >/usr/pkgsrc/devel/libtool/patches/patch-ad
+./bootstrap --skip-git --force
+pkgdiff build-aux/ltmain.sh >/usr/pkgsrc/devel/libtool/patches/patch-build-aux_ltmain.sh
+pkgdiff configure >/usr/pkgsrc/devel/libtool/patches/patch-configure
+pkgdiff libltdl/configure >/usr/pkgsrc/devel/libtool/patches/patch-libltdl_configure
 cd /usr/pkgsrc/devel/libtool
 make makepatchsum
 

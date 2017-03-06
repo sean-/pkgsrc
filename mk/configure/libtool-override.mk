@@ -18,7 +18,11 @@ OVERRIDE_DIRDEPTH.depcomp?=	${OVERRIDE_DIRDEPTH}
 
 _OVERRIDE_PATH.libtool=		${LIBTOOL}
 _OVERRIDE_PATH.shlibtool=	${SHLIBTOOL}
+.if exists(${LOCALBASE}/share/libtool/config/depcomp)
 _OVERRIDE_PATH.depcomp=		${LOCALBASE}/share/libtool/config/depcomp
+.else
+_OVERRIDE_PATH.depcomp=		${LOCALBASE}/share/libtool/build-aux/depcomp
+.endif
 
 .for _script_ in libtool shlibtool depcomp
 _SCRIPT.${_script_}-override=						\
