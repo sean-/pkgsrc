@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1217 2017/02/25 14:55:37 kamil Exp $
+# $NetBSD: Makefile,v 1.1219 2017/03/03 14:09:18 prlw1 Exp $
 #
 
 COMMENT=	Packages related to the World Wide Web
@@ -99,6 +99,7 @@ SUBDIR+=	dillo
 SUBDIR+=	drivel
 SUBDIR+=	drraw
 SUBDIR+=	drupal7
+SUBDIR+=	e2guardian
 SUBDIR+=	elinks
 SUBDIR+=	eliom
 SUBDIR+=	emacs-w3m
@@ -681,8 +682,8 @@ SUBDIR+=	py-httplib2
 SUBDIR+=	py-hyperframe
 SUBDIR+=	py-idna
 SUBDIR+=	py-jonpy
-SUBDIR+=	py-livereload
 SUBDIR+=	py-landslide
+SUBDIR+=	py-livereload
 SUBDIR+=	py-mechanize
 SUBDIR+=	py-mezzanine
 SUBDIR+=	py-mod_wsgi

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.602 2017/02/20 23:26:40 minskim Exp $
+# $NetBSD: Makefile,v 1.606 2017/03/13 11:26:40 leot Exp $
 #
 
 COMMENT=	Security tools
@@ -62,6 +62,7 @@ SUBDIR+=	cyrus-sasl
 SUBDIR+=	cyrus-saslauthd
 SUBDIR+=	dcfldd
 SUBDIR+=	ddos-scan
+SUBDIR+=	dehydrated
 SUBDIR+=	destroy
 SUBDIR+=	dhbitty
 SUBDIR+=	dirb
@@ -378,6 +379,7 @@ SUBDIR+=	py-acme-tiny
 SUBDIR+=	py-aes
 SUBDIR+=	py-asn1
 SUBDIR+=	py-asn1-modules
+SUBDIR+=	py-asn1crypto
 SUBDIR+=	py-backports.ssl_match_hostname
 SUBDIR+=	py-bcrypt
 SUBDIR+=	py-certbot
@@ -462,6 +464,7 @@ SUBDIR+=	ruby-openid
 SUBDIR+=	ruby-password
 SUBDIR+=	ruby-rack-openid
 SUBDIR+=	ruby-rc4
+SUBDIR+=	ruby-rex-struct2
 SUBDIR+=	ruby-ruby-openid
 SUBDIR+=	ruby-shadow
 SUBDIR+=	ruby-simple_oauth
@@ -488,6 +491,7 @@ SUBDIR+=	snortsnarf
 SUBDIR+=	snow
 SUBDIR+=	softhsm
 SUBDIR+=	spiped
+SUBDIR+=	sqlmap
 SUBDIR+=	srm
 SUBDIR+=	srp_client
 SUBDIR+=	ssdeep

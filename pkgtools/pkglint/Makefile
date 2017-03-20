@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.510 2017/01/18 23:05:43 rillig Exp $
+# $NetBSD: Makefile,v 1.512 2017/03/17 22:43:34 rillig Exp $
 
-PKGNAME=	pkglint-5.4.17
+PKGNAME=	pkglint-5.4.19
 DISTFILES=	# none
 CATEGORIES=	pkgtools
 
@@ -26,13 +26,10 @@ do-extract:
 	${RUN} ${MKDIR} ${WRKDIR}/pkglint
 	${RUN} cd ${FILESDIR} && ${PAX} -rw . ${WRKDIR}/pkglint
 
-pre-build:
-	${RUN} env GOPATH=${WRKDIR}:${BUILDLINK_DIR}/gopkg go generate ${GO_BUILD_PATTERN}
-
 pre-install:
 	${RUN} rm -rf ${WRKDIR}/pkg
 
-do-install: do-install-man
+post-install: do-install-man
 
 .include "../../mk/bsd.prefs.mk"
 

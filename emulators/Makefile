@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.247 2017/01/15 11:12:07 tsutsui Exp $
+# $NetBSD: Makefile,v 1.249 2017/03/08 20:07:21 hauke Exp $
 #
 
 COMMENT=	Emulators for other operating systems
@@ -291,6 +291,7 @@ SUBDIR+=	suse131_32_x11
 SUBDIR+=	suse131_alsa
 SUBDIR+=	suse131_aspell
 SUBDIR+=	suse131_base
+SUBDIR+=	suse131_binutils
 SUBDIR+=	suse131_compat
 SUBDIR+=	suse131_cyrus-sasl
 SUBDIR+=	suse131_dbus-glib

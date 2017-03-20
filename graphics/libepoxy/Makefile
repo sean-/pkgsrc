@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.18 2017/02/18 02:37:11 ryoon Exp $
+# $NetBSD: Makefile,v 1.20 2017/03/18 20:18:39 adam Exp $
 
-DISTNAME=	libepoxy-1.4
+DISTNAME=	libepoxy-1.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GITHUB:=anholt/}
-GITHUB_TAG=	v${PKGVERSION_NOREV}
+GITHUB_TAG=	${PKGVERSION_NOREV}
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	https://github.com/anholt/libepoxy/
@@ -34,7 +34,7 @@ PLIST.glx=	yes
 .include "../../graphics/MesaLib/buildlink3.mk"
 .include "../../x11/libX11/buildlink3.mk"
 .  if ${OPSYS} == "Darwin"
-CONFIGURE_ARGS+=	--enable-egl=yes
+CONFIGURE_ARGS+=	--enable-egl=${MESALIB_SUPPORTS_EGL}
 .    if ${X11_TYPE} == "modular"
 CPPFLAGS+=	-DGLX_LIB=\"${PREFIX}/lib/libGL.dylib\"
 .    endif

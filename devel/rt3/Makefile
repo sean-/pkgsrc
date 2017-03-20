@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.60 2016/06/08 19:23:48 wiz Exp $
+# $NetBSD: Makefile,v 1.63 2017/03/12 19:55:49 spz Exp $
 
 DISTNAME=		rt-3.8.17
-PKGREVISION=		7
+PKGREVISION=		8
 CATEGORIES=		devel
 MASTER_SITES=		http://download.bestpractical.com/pub/rt/release/
 
@@ -148,4 +148,5 @@ post-extract:
 .include "Makefile.install"
 
 .include "../../databases/p5-DBI/buildlink3.mk"
+.include "../../mk/apache.mk"
 .include "../../mk/bsd.pkg.mk"

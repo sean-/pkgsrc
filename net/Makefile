@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1150 2017/02/25 17:39:21 wiz Exp $
+# $NetBSD: Makefile,v 1.1153 2017/03/14 13:09:55 wiz Exp $
 #
 
 COMMENT=	Networking tools
@@ -379,6 +379,7 @@ SUBDIR+=	nap
 SUBDIR+=	napshare
 SUBDIR+=	nasd
 SUBDIR+=	nbtscan
+SUBDIR+=	ncdc
 SUBDIR+=	ncftp3
 SUBDIR+=	ndpi
 SUBDIR+=	nemesis
@@ -581,8 +582,10 @@ SUBDIR+=	poink
 SUBDIR+=	poptop
 SUBDIR+=	portmap
 SUBDIR+=	powerdns
+SUBDIR+=	powerdns-geoip
 SUBDIR+=	powerdns-ldap
 SUBDIR+=	powerdns-mysql
+SUBDIR+=	powerdns-odbc
 SUBDIR+=	powerdns-pgsql
 SUBDIR+=	powerdns-recursor
 SUBDIR+=	pppd
@@ -837,6 +840,7 @@ SUBDIR+=	wakeup
 SUBDIR+=	walker
 SUBDIR+=	wap-utils
 SUBDIR+=	waste
+SUBDIR+=	websocketpp
 SUBDIR+=	wget
 SUBDIR+=	wgetpaste
 SUBDIR+=	whatmask
