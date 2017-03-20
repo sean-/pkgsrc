@@ -1,4 +1,4 @@
-$NetBSD: TODO,v 1.17173 2017/03/20 11:57:45 wiz Exp $
+$NetBSD: TODO,v 1.17183 2017/03/20 14:15:33 wiz Exp $
 
 Suggested new packages
 ======================
@@ -358,7 +358,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o GMT-5.1.1
 	o GNUMail-1.2.2
 	o Gorm-1.2.22
-	o ImageMagick-7.0.5.3
 	o JBidwatcher-2.5.6 [wants launch4j]
 	o LPRng-core-3.8.35
 	o MesaDemos-8.3.0
@@ -1049,7 +1048,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o mg-20160118
 	o mgetty+sendfax-1.1.35
 	o micro_httpd-20140814
-	o miller-5.0.1
 	o milter-greylist-4.6
 	o milter-regex-2.0
 	o mime-construct-1.11
@@ -1108,8 +1106,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o netio-1.32
 	o netramet-50
 	o newmail-1.0.2
-	o nickle-2.79
-	o notmuch-0.24
 	o nqp-2016.02
 	o ns-3.14.1
 	o ns-plugger-common-5.1.3
@@ -1304,18 +1300,15 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o py-jdcal-1.2
 	o py-keybinder-0.3.1
 	o py-mezzanine-4.2.2
-	o py-mistune-0.7.4
 	o py-munkres-1.0.7
 	o py-musicbrainz-0.7.4
 	o py-ncclient-0.5.3
 	o py-newt-0.52.18
 	o py-notify-0.3.1
-	o py-numpy-1.12.1
 	o py-numpydoc-0.6.0
 	o py-omniORBpy-3.7
 	o py-pdf-parser-0.6.4
 	o py-pendrell-0.3.7
-	o py-psycopg2-2.7.1
 	o py-ptt-1.10.2
 	o py-pycountry-1.20
 	o py-quixote-2.9
@@ -1328,9 +1321,7 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o py-sqlalchemy-migrate-0.10.0
 	o py-suds-0.4.1
 	o py-sybase-0.37
-	o py-test-3.0.7
 	o py-tornado-4.4.1
-	o py-tortoisehg-4.1.1
 	o py-wxWidgets-3.0.0
 	o py-yubiauth-0.3.10
 	o py-zconfig-3.0.3
@@ -1375,7 +1366,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o rp-pppoe-3.11
 	o rpm-4.13
 	o rsnapshot-1.4.2
-	o rspamd-1.5.1
 	o rt4-4.4.0
 	o rtcw-1.41.3
 	o rtty-4.0 [at ftp://ftp.isc.org/isc/rtty/]
