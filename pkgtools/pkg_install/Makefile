@@ -111,15 +111,8 @@ BUILDLINK_API_DEPENDS.libarchive+=	libarchive>=2.8.0
 .include "../../archivers/xz/builtin.mk"
 .include "../../archivers/libarchive/builtin.mk"
 .include "../../devel/zlib/builtin.mk"
-.include "../../security/openssl/builtin.mk"
 
 .include "options.mk"
-
-.if !empty(USE_BUILTIN.openssl:M[yY][eE][sS])
-CONFIGURE_ARGS+=	--with-ssl
-
-.include "../../security/openssl/buildlink3.mk"
-.endif
 
 .if empty(USE_BUILTIN.bzip2:M[yY][eE][sS]) || \
     empty(USE_BUILTIN.zlib:M[yY][eE][sS])
@@ -215,6 +208,7 @@ pre-configure:
 		--disable-dependency-tracking --without-expat		\
 		--disable-maintainer-mode				\
 		--without-iconv --without-lzo2 --without-nettle		\
+		--without-lzmadec --without-lzma			\
 		--without-xml2 --without-lz4				\
 		${LIBARCHIVE_CONFIGURE_ARGS}
 	cd ${WRKDIR}/libarchive && ${BUILD_MAKE_CMD}
@@ -224,7 +218,7 @@ pre-configure:
 		${MAKE_PROGRAM} ${MAKE_FLAGS} ${BUILD_MAKE_FLAGS}	\
 			-f ${MAKE_FILE} depend all
 	cd ${WRKDIR}/netpgpverify &&					\
-	${SED} -e '/zlib/d' Makefile.lib.in >Makefile.in &&		\
+	${SED} -e '/zlib/d' -e 's/rsa\.o//' Makefile.lib.in >Makefile.in && \
 	${RM} -f bzlib.h zlib.h &&					\
 	${CONFIG_SHELL} ${CONFIG_SHELL_FLAGS} ./configure &&		\
 	${SETENV} ${MAKE_ENV} ${BSD_MAKE_ENV} ${MAKE_PROGRAM}		\
