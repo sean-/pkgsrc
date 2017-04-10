@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.66 2017/03/30 12:40:31 jperkin Exp $
+# $NetBSD: Makefile,v 1.65.20.1 2017/04/01 14:59:21 bsiegert Exp $
 
 DISTNAME=	libiconv-1.14
 PKGREVISION=	3

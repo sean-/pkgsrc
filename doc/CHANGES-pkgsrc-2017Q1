@@ -1,4 +1,48 @@
-$NetBSD: CHANGES-pkgsrc-2017Q1,v 1.1.2.1 2017/03/30 00:07:31 gdt Exp $
+$NetBSD: CHANGES-pkgsrc-2017Q1,v 1.1.2.6 2017/04/09 17:57:59 spz Exp $
 
 Changes to packages and infrastructure on the pkgsrc-2017Q1 branch:
+
+Pullup ticket #5236 - requested by sevan
+databases/cdb: remove restriction
+
+Pullup ticket #5237 - requested by sevan
+mail/mess822: remove restriction
+
+Pullup ticket #5238 - requested by sevan
+editors/nvi: bugfix
+
+Pullup ticket #5230 - requested by sevan
+devel/arcanist: dependency fix
+
+Pullup ticket #5231 - requested by sevan
+devel/scmcvs: bug fix
+
+Pullup ticket #5233 - requested by sevan
+devel/woboq_codebrowser: build fix
+
+Pullup ticket #5235 - requested by sevan
+mk/check/check-files.mk: documentation fix
+
+Pullup ticket #5242 - requested by wiz
+www/curl: security patch
+
+Pullup ticket #5244 - requested by kim
+net/proftpd-postgresql: security update
+net/proftpd-sqlite; security update
+net/proftpd: security update
+
+Pullup ticket #5246 - requested by sevan
+sysutils/collectd: security update
+
+Pullup ticket #5250 - requested by bsiegert
+net/rabbitmq: security update
+
+Pullup ticket #5251 - requested by bsiegert
+devel/golint: build fix
+
+Pullup ticket #5252 - requested by joerg
+www/py-django: security update
+
+Pullup ticket #5257 - requested by wen
+www/mediawiki: security update
 
