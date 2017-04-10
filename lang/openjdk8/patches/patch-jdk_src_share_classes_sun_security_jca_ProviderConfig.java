@@ -1,4 +1,4 @@
-$NetBSD: patch-jdk_src_share_classes_sun_security_jca_ProviderConfig.java,v 1.1 2017/03/30 12:57:11 jperkin Exp $
+$NetBSD: patch-jdk_src_share_classes_sun_security_jca_ProviderConfig.java,v 1.1.2.2 2017/04/01 18:07:19 bsiegert Exp $
 
 Fix https://www.illumos.org/issues/7227
 
