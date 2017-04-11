@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.31 2017/01/14 23:00:31 schmonz Exp $
+# $NetBSD: Makefile,v 1.34 2017/04/10 15:04:56 schmonz Exp $
 #
 
-DISTNAME=		qmail-run-20170114
+DISTNAME=		qmail-run-20170410
 CATEGORIES=		mail
 MASTER_SITES=		# empty
 DISTFILES=		# empty
@@ -10,7 +10,6 @@ MAINTAINER=		schmonz@NetBSD.org
 COMMENT=		Configures qmail to receive and deliver mail
 LICENSE=		2-clause-bsd
 
-DEPENDS+=		mess822-[0-9]*:../../mail/mess822
 DEPENDS_QMAIL=		qmail>=1.03nb8:../../mail/qmail
 DEPENDS+=		${DEPENDS_QMAIL}
 
@@ -20,12 +19,16 @@ WRKSRC=			${WRKDIR}
 NO_BUILD=		yes
 NO_CHECKSUM=		yes
 
+FILES_SUBST+=		QMAIL_DAEMON_USER=${QMAIL_DAEMON_USER:Q}
+FILES_SUBST+=		QMAIL_LOG_USER=${QMAIL_LOG_USER:Q}
+FILES_SUBST+=		QMAIL_SEND_USER=${QMAIL_SEND_USER:Q}
 FILES_SUBST+=		QMAIL_QUEUE_EXTRA=${QMAIL_QUEUE_EXTRA:Q}
 FILES_SUBST+=		PKGNAME=${PKGNAME:Q}
 MESSAGE_SUBST+=		PKG_SYSCONFBASE=${PKG_SYSCONFBASE}
 RCD_SCRIPTS=		qmail qmailofmipd qmailpop3d qmailqread qmailsend qmailsmtpd
 
 INSTALLATION_DIRS=	bin share/doc/qmail-run share/examples/qmail-run
+BUILD_DEFS+=		QMAIL_DAEMON_USER QMAIL_LOG_USER QMAIL_SEND_USER
 BUILD_DEFS+=		QMAIL_QUEUE_EXTRA
 
 .include "../../mk/bsd.prefs.mk"

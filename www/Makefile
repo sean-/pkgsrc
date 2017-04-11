@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1219 2017/03/03 14:09:18 prlw1 Exp $
+# $NetBSD: Makefile,v 1.1221 2017/04/10 10:44:45 ryoon Exp $
 #
 
 COMMENT=	Packages related to the World Wide Web
@@ -55,6 +55,7 @@ SUBDIR+=	apache-tomcat55
 SUBDIR+=	apache-tomcat6
 SUBDIR+=	apache-tomcat7
 SUBDIR+=	apache-tomcat8
+SUBDIR+=	apache-tomcat85
 SUBDIR+=	apache22
 SUBDIR+=	apache24
 SUBDIR+=	apachetop
@@ -775,6 +776,7 @@ SUBDIR+=	ruby-journey
 SUBDIR+=	ruby-jquery-rails
 SUBDIR+=	ruby-jsmin
 SUBDIR+=	ruby-liquid
+SUBDIR+=	ruby-loofah
 SUBDIR+=	ruby-mechanize
 SUBDIR+=	ruby-multipart-post
 SUBDIR+=	ruby-mustermann19

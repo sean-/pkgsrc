@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.486 2017/02/12 02:16:27 mef Exp $
+# $NetBSD: Makefile,v 1.488 2017/04/09 02:57:38 mef Exp $
 #
 
 COMMENT=	Electronic mail utilities
@@ -136,6 +136,7 @@ SUBDIR+=	libetpan
 SUBDIR+=	libmilter
 SUBDIR+=	libsieve
 SUBDIR+=	libspf2
+SUBDIR+=	libsrs2
 SUBDIR+=	libsylph
 SUBDIR+=	libytnef
 SUBDIR+=	mail-notification
@@ -199,6 +200,7 @@ SUBDIR+=	p5-Email-MIME
 SUBDIR+=	p5-Email-MIME-Attachment-Stripper
 SUBDIR+=	p5-Email-MIME-ContentType
 SUBDIR+=	p5-Email-MIME-Encodings
+SUBDIR+=	p5-Email-MIME-RFC2047
 SUBDIR+=	p5-Email-MessageID
 SUBDIR+=	p5-Email-Reply
 SUBDIR+=	p5-Email-Send

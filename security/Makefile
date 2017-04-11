@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.608 2017/03/20 22:36:49 bsiegert Exp $
+# $NetBSD: Makefile,v 1.611 2017/04/07 00:09:14 mef Exp $
 #
 
 COMMENT=	Security tools
@@ -26,6 +26,7 @@ SUBDIR+=	asignify
 SUBDIR+=	avcheck
 SUBDIR+=	base
 SUBDIR+=	bcrypt
+SUBDIR+=	bearssl
 SUBDIR+=	beecrypt
 SUBDIR+=	bitstir
 SUBDIR+=	boringssl
@@ -75,9 +76,9 @@ SUBDIR+=	ecap_clamav_adapter
 SUBDIR+=	egd
 SUBDIR+=	engine-pkcs11
 SUBDIR+=	ent
+SUBDIR+=	erlang-epam
 SUBDIR+=	erlang-fast_tls
 SUBDIR+=	erlang-p1_oauth2
-SUBDIR+=	erlang-p1_pam
 #SUBDIR+=	f-prot-antivirus6		# only contains shared files
 SUBDIR+=	f-prot-antivirus6-fs-bin
 SUBDIR+=	f-prot-antivirus6-ms-bin
@@ -282,6 +283,7 @@ SUBDIR+=	p5-Crypt-SmbHash
 SUBDIR+=	p5-Crypt-Twofish
 SUBDIR+=	p5-Crypt-URandom
 SUBDIR+=	p5-Crypt-X509
+SUBDIR+=	p5-CryptX
 SUBDIR+=	p5-Dancer-Plugin-Auth-RBAC
 SUBDIR+=	p5-Data-SimplePassword
 SUBDIR+=	p5-Digest

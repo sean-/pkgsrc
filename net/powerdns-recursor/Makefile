@@ -1,7 +1,8 @@
-# $NetBSD: Makefile,v 1.19 2017/03/09 13:43:49 fhajny Exp $
+# $NetBSD: Makefile,v 1.21 2017/03/31 19:41:13 fhajny Exp $
 #
 
 DISTNAME=		pdns-recursor-4.0.4
+PKGREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		http://downloads.powerdns.com/releases/
 EXTRACT_SUFX=		.tar.bz2
@@ -13,7 +14,7 @@ LICENSE=		gnu-gpl-v2
 
 GNU_CONFIGURE=		yes
 USE_LANGUAGES=		c c++
-USE_TOOLS+=		gmake
+USE_TOOLS+=		gmake pkg-config
 
 RCD_SCRIPTS+=		pdns_recursor
 

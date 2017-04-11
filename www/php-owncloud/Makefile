@@ -1,8 +1,9 @@
-# $NetBSD: Makefile,v 1.61 2016/12/18 08:28:08 wen Exp $
+# $NetBSD: Makefile,v 1.63 2017/04/05 12:33:49 fhajny Exp $
 #
 
-DISTNAME=	owncloud-9.1.3
+DISTNAME=	owncloud-9.1.4
 PKGNAME=	${PHP_PKG_PREFIX}-${DISTNAME}
+PKGREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 EXTRACT_SUFX=	.tar.bz2
@@ -12,7 +13,6 @@ HOMEPAGE=	http://owncloud.org/
 COMMENT=	Web services under your control
 LICENSE=	gnu-agpl-v3
 
-DEPENDS+=	${PHP_PKG_PREFIX}-dom>=5.4.0:../../textproc/php-dom
 DEPENDS+=	${PHP_PKG_PREFIX}-gd>=5.4.0:../../graphics/php-gd
 DEPENDS+=	${PHP_PKG_PREFIX}-iconv>=5.4.0:../../converters/php-iconv
 DEPENDS+=	${PHP_PKG_PREFIX}-json>=5.4.0:../../textproc/php-json
