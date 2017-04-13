@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.4 2017/04/05 12:33:48 fhajny Exp $
+# $NetBSD: options.mk,v 1.3.36.1 2017/04/13 11:15:39 bsiegert Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.drupal
 

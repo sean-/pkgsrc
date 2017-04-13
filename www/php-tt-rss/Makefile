@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.11 2017/04/05 12:33:49 fhajny Exp $
+# $NetBSD: Makefile,v 1.10.24.1 2017/04/13 11:15:40 bsiegert Exp $
 
 TTRVER=		1.12
 DISTNAME=	Tiny-Tiny-RSS-${TTRVER}

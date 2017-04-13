@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.8 2017/04/05 12:33:48 fhajny Exp $
+# $NetBSD: Makefile,v 1.7.34.1 2017/04/13 11:15:38 bsiegert Exp $
 #
 
 DISTNAME=	phoronix-test-suite-${PTS_VERSION}

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.28 2017/04/05 12:33:48 fhajny Exp $
+# $NetBSD: Makefile,v 1.27.2.1 2017/04/13 11:15:39 bsiegert Exp $
 #
 
 DISTNAME=	contao-${CT_PKGVER}

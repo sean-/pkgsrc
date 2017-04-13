@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.81 2017/04/05 12:33:49 fhajny Exp $
+# $NetBSD: Makefile,v 1.80.2.1 2017/04/13 11:15:39 bsiegert Exp $
 
 DISTNAME=	horde-3.3.13
 PKGREVISION=	4

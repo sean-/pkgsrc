@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.44 2017/04/05 12:33:48 fhajny Exp $
+# $NetBSD: Makefile,v 1.43.2.1 2017/04/13 11:15:39 bsiegert Exp $
 
 DISTNAME=	drupal-7.52
 PKGREVISION=	2

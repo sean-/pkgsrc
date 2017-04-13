@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.10 2017/04/05 12:33:48 fhajny Exp $
+# $NetBSD: Makefile,v 1.9.6.1 2017/04/13 11:15:39 bsiegert Exp $
 
 DISTNAME=	baikal-0.4.6
 PKGNAME=	${PHP_PKG_PREFIX}-${DISTNAME}
