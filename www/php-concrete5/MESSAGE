@@ -1,5 +1,5 @@
 ===========================================================================
-$NetBSD: MESSAGE,v 1.8 2017/04/05 12:33:49 fhajny Exp $
+$NetBSD: MESSAGE,v 1.7.16.1 2017/04/13 11:15:40 bsiegert Exp $
 
 To use concrete5 with nginx, you will need to perform the following steps.
 

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.9 2017/04/05 12:33:47 fhajny Exp $
+# $NetBSD: Makefile,v 1.8.6.1 2017/04/13 11:15:38 bsiegert Exp $
 
 DISTNAME=	magento-1.9.2.2
 PKGREVISION=	1
