@@ -1,4 +1,4 @@
-$NetBSD: distinfo,v 1.7 2017/04/13 10:17:25 jperkin Exp $
+$NetBSD: distinfo,v 1.6.2.1 2017/04/16 15:15:00 bsiegert Exp $
 
 SHA1 (util-linux-2.29.2.tar.xz) = b488f185e74187a63b55baef9d3f48d5b1780118
 RMD160 (util-linux-2.29.2.tar.xz) = 70bfcbef7210c3a28b067fc064b5619061339fe0

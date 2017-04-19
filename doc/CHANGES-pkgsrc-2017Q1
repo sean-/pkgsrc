@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-pkgsrc-2017Q1,v 1.1.2.8 2017/04/13 12:11:40 bsiegert Exp $
+$NetBSD: CHANGES-pkgsrc-2017Q1,v 1.1.2.12 2017/04/17 16:37:17 bsiegert Exp $
 
 Changes to packages and infrastructure on the pkgsrc-2017Q1 branch:
 
@@ -80,4 +80,120 @@ net/bind910: security fix
 
 Pullup ticket #5273 - requested by taca
 net/bind99: security fix
+
+Pullup ticket #5274 - requested by taca
+mail/dovecot2: security fix
+mail/dovecot2-sqlite: security fix
+
+Pullup ticket #5275 - requested by taca
+mail/dovecot2-pigeonhole: point update
+
+Pullup ticket #5245 - requested by sevan
+security/p5-Authen-TacacsPlus: build fix
+
+Pullup ticket #5253 - requested by sevan
+games/xpipeman: bugfix
+
+Pullup ticket #5248 - requested by sevan
+lang/nodejs6: bugfix
+
+Pullup ticket #5249 - requested by sevan
+lang/nodejs4: bugfix
+
+Pullup ticket #5259 - requested by sevan
+security/nacl: metadata update
+
+Pullup ticket #5260 - requested by sevan
+devel/p5-Contextual-Return: bugfix
+
+Pullup ticket #5261 - requested by sevan
+mk/defaults/mk.conf: bugfix
+
+Pullup ticket #5264 - requested by sevan
+devel/boost-libs: build fix
+
+Pullup ticket #5265 - requested by sevan
+mk/compiler/gcc.mk: bugfix
+
+Pullup ticket #5266 - requested by sevan
+x11/modular-xorg-server: build fix
+
+Pullup ticket #5268 - requested by sevan
+lang/libLLVM: build fix
+
+Pullup ticket #5271 - requested by sevan
+textproc/p5-XML-Feed: build fix
+
+Pullup ticket #5277 - requested by sevan
+misc/rhash: build fix
+
+Pullup ticket #5278 - requested by sevan
+x11/mcookie: build fix
+
+Pullup ticket #5279 - requested by sevan
+math/fricas: build fix
+
+Pullup ticket #5281 - requested by sevan
+lang/erlang: module build fix
+
+Pullup ticket #5262 - requested by sevan
+security/py-acme: build fix
+security/py-certbot: build fix
+
+Pullup ticket #5282 - requested by sevan
+sysutils/py-google-compute-engine: build fix
+
+Pullup ticket #5284 - requested by sevan
+devel/js2-mode: bugfix
+
+Pullup ticket #5286 - requested by sevan
+www/py-mod_wsgi-metrics: update HOMEPAGE
+
+Pullup ticket #5287 - requested by sevan
+www/apache24: build fix
+
+Pullup ticket #5288 - requested by sevan
+wm/windowmaker: build fix
+
+Pullup ticket #5258 - requested by sevan
+chat/gajim: build fix
+
+Pullup ticket #5263 - requested by sevan
+security/gnutls: build fix
+
+Pullup ticket #5290 - requested by sevan
+www/nginx: option name change
+
+Pullup ticket #5291 - requested by sevan
+emulators/qemu: build fix
+
+Pullup ticket #5289 - requested by sevan
+devel/ruby-eet: build fix
+
+Pullup ticket #5300 - requested by maya
+devel/mantis: security fix
+
+Pullup ticket #5296 - requested by schmonz
+mail/queue-fix: bugfix
+
+Pullup ticket #5297 - requested by schmonz
+mk/default: prerequisites for qmail pull-up
+
+Pullup ticket #5254 - requested by schmonz
+mail/qmail: build fix
+
+Pullup ticket #5255 - requested by schmonz
+mail/qmail-run: bugfix
+
+Pullup ticket #5256 - requested by schmonz
+mail/qmail-run: bugfix
+
+Pullup ticket #5298 - requested by sevan
+mk/wrapper: bugfix
+
+Pullup ticket #5299 - requested by sevan
+misc/raspberrypi-userland: bugfix
+
+Pullup ticket #5301 - requested by sevan
+databases/sqlite: build fix
 

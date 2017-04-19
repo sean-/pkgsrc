@@ -1,4 +1,4 @@
-$NetBSD: patch-include_ttyutils.h,v 1.2 2017/04/13 10:17:25 jperkin Exp $
+$NetBSD: patch-include_ttyutils.h,v 1.1.6.1 2017/04/16 15:15:00 bsiegert Exp $
 
 Define values if missing.
 
