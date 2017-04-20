@@ -104,7 +104,7 @@ PLIST_SUBST+=	SOEXT=${SOEXT}
 
 # At least LLVM 3.9.0 and subprojects don't correctly add C++11 flags
 # automatically.
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 # needs std::atomic with 64-bit CAS
 .if ${MACHINE_ARCH} == "i386"

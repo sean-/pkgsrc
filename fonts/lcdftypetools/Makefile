@@ -22,7 +22,7 @@ USE_LANGUAGES=	c c++
 USE_TOOLS+=	pkg-config
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/lcdf-typetools
 
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 CONFIG_GUESS_OVERRIDE+=	${WRKDIR}/${DISTNAME}/build-aux/config.guess
 CONFIG_SUB_OVERRIDE+=	${WRKDIR}/${DISTNAME}/build-aux/config.sub

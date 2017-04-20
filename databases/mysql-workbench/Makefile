@@ -51,10 +51,7 @@ SUBST_SED.osx-gl=	-e 's,-lGL,-framework OpenGL,g'
 .include "../../graphics/MesaLib/buildlink3.mk"
 .endif
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../archivers/libzip/buildlink3.mk"
 .include "../../databases/sqlite3/buildlink3.mk"

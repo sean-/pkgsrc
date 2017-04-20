@@ -17,7 +17,7 @@ USE_TOOLS+=	pkg-config gmake intltool perl msgfmt
 
 CONFIGURE_ARGS+=	--disable-lynx
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"

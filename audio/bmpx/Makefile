@@ -23,7 +23,7 @@ CHECK_WRKREF_SKIP+=	bin/bmp2
 CHECK_WRKREF_SKIP+=	libexec/beep-media-player-2-bin
 
 GCC_REQD+=	4.8
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../mk/bsd.fast.prefs.mk"
 .if ${OPSYS} == "Linux"

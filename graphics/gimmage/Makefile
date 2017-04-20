@@ -13,7 +13,7 @@ COMMENT=	GTKMM-based image viewing program
 GNU_CONFIGURE=		yes
 INSTALLATION_DIRS=	share/doc/gimmage
 USE_LANGUAGES=		c c++
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 USE_PKGLOCALEDIR=	yes
 USE_TOOLS+=		pkg-config
 

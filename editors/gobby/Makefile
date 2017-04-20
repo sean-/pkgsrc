@@ -15,7 +15,7 @@ USE_PKGLOCALEDIR=	yes
 USE_TOOLS+=		gmake intltool msgfmt pkg-config
 GNU_CONFIGURE=		yes
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 .include "options.mk"
 

@@ -17,7 +17,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 
 BUILD_DIRS=		src/api/nodejs
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 # Benign reference inside an object file
 CHECK_WRKREF_SKIP+=	lib/node_modules/sqlrelay/sqlrelay.node

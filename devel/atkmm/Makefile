@@ -20,7 +20,7 @@ USE_TOOLS+=		bsdtar gmake perl pkg-config
 GNU_CONFIGURE=		yes
 PKGCONFIG_OVERRIDE+=	atk/atkmm.pc.in
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../devel/atk/buildlink3.mk"
 .include "../../devel/glibmm/buildlink3.mk"

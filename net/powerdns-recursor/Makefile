@@ -27,9 +27,10 @@ INSTALL_MAKE_FLAGS+=	sysconfdir=${EGDIR}
 CONF_FILES+=		${EGDIR}/recursor.conf-dist \
 			${PKG_SYSCONFDIR}/recursor.conf
 
+CXX_REQD+=	c++11
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11 -Wno-c++11-narrowing
+CXXFLAGS+=	-Wno-c++11-narrowing
 .endif
 
 .include "options.mk"

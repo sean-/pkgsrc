@@ -17,7 +17,7 @@ USE_TOOLS+=		gmake intltool pkg-config msgfmt
 GNU_CONFIGURE=		yes
 USE_LANGUAGES=		c c++
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 BUILDLINK_API_DEPENDS.glibmm+=	glibmm>=2.16.3
 .include "../../devel/glibmm/buildlink3.mk"

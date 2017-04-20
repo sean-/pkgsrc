@@ -36,15 +36,7 @@ SUBST_FILES.d2u+=	src/FlightCrew/tests/CMakeLists.txt
 SUBST_FILES.d2u+=	src/FlightCrew/Validators/Opf/ReachabilityAnalysis.cpp
 SUBST_FILTER_CMD.d2u=	${TR} -d '\r'
 
-.include "../../mk/compiler.mk"
-# GCC 4.4 and above needs this
-.if !empty(PKGSRC_COMPILER:Mgcc) && !empty(CC_VERSION:Mgcc-4.[4-9]*)
-_WRAP_EXTRA_ARGS.CXX+=	-std=c++0x
-CWRAPPERS_APPEND.cxx+=	-std=c++0x
-.elif !empty(PKGSRC_COMPILER:Mclang)
-_WRAP_EXTRA_ARGS.CXX+=	-std=c++11
-CWRAPPERS_APPEND.cxx+=	-std=c++11
-.endif
+CXX_REQD+=		c++11
 
 post-extract:
 	${RM} -rf ${WRKDIR}/src/BoostParts ${WRKDIR}/src/Xerces ${WRKDIR}/src/zlib ${WRKDIR}/src/googlemock

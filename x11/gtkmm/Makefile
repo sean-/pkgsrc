@@ -12,7 +12,7 @@ COMMENT=	C++ interface to Gtk+ v2
 LICENSE=	gnu-lgpl-v2.1
 
 USE_LANGUAGES=		c c++
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 USE_LIBTOOL=		yes
 USE_TOOLS+=		gmake perl:run pkg-config
 GNU_CONFIGURE=		yes

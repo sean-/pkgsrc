@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.gtkmm.org/
 COMMENT=	C++ bindings for libglade
 
 USE_LANGUAGES=		c c++
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 USE_LIBTOOL=		yes
 USE_PKGLOCALEDIR=	yes
 USE_TOOLS+=		gm4 gmake pkg-config

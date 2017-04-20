@@ -117,7 +117,7 @@ CMAKE_ARGS+=		-DCLANG_INCLUDE_TESTS=OFF
 
 # At least LLVM 3.9.0 and subprojects don't correctly add C++11 flags
 # automatically.
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 post-extract:
 	${RUN} mkdir -p ${WRKDIR}/build

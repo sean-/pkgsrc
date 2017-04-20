@@ -14,7 +14,7 @@ GNU_CONFIGURE=	yes
 USE_LANGUAGES=	c c++
 USE_LIBTOOL=	yes
 USE_TOOLS+=	pkg-config
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 PKGCONFIG_OVERRIDE+=	glibmm-utils/glibmm-utils.pc.in
 PKGCONFIG_OVERRIDE+=	gtkmm-utils/gtkmm-utils.pc.in

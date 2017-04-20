@@ -14,6 +14,6 @@ INSTALLATION_DIRS=	bin
 
 USE_CMAKE=	yes
 USE_LANGUAGES=	c++ c
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../mk/bsd.pkg.mk"

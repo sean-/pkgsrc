@@ -20,7 +20,7 @@ DEPENDS+=	${PYPKGPREFIX}-lxml-[0-9]*:../../textproc/py-lxml
 
 EXTRACT_USING=		bsdtar
 GCC_REQD+=		4.5.2
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 USE_CMAKE=		yes
 USE_LANGUAGES=		c c++

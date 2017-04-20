@@ -16,12 +16,7 @@ USE_CMAKE=	yes
 
 CMAKE_ARGS+=	-DPYTHON=${PYTHONBIN} -DDISABLE_GCRYPT=yes
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
-
-CXXFLAGS.Cygwin+=	-std=gnu++11
+CXX_REQD+=	gnu++11
 
 LDFLAGS+=	${EXPORT_SYMBOLS_LDFLAGS}
 

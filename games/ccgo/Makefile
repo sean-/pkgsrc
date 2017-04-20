@@ -23,9 +23,7 @@ SUBST_FILES.ccgo=	game_setup.cc settings.cc
 SUBST_MESSAGE.ccgo=	Fixing paths to gnugo.
 SUBST_SED.ccgo=		-e 's|/usr/games/gnugo|${LOCALBASE}/bin/gnugo|g'
 
-.include "../../mk/bsd.prefs.mk"
-
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/gconfmm/buildlink3.mk"

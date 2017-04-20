@@ -18,7 +18,7 @@ PKGCONFIG_OVERRIDE=	sigc++.pc.in
 
 CONFLICTS+=		libsigc++2-[0-9]*
 GCC_REQD+=		4.8
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 # use something that can extract long filenames in GNU format on NetBSD 1.6.x
 EXTRACT_USING=		bsdtar

@@ -14,12 +14,13 @@ GNU_CONFIGURE=	yes
 USE_TOOLS+=	gmake
 USE_LIBTOOL=	yes
 USE_LANGUAGES+=	c c++
+CXX_REQD+=	c++11
 
 AUTO_MKDIRS=	yes
 
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11 -Wno-error=c++11-narrowing
+CXXFLAGS+=	-Wno-error=c++11-narrowing
 .endif
 
 .include "../../mk/pthread.buildlink3.mk"

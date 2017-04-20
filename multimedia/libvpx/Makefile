@@ -83,9 +83,9 @@ CONFIGURE_ARGS+=	--target=x86-solaris-gcc
 .  endif
 .endif
 
-.include "../../mk/compiler.mk"
+CXX_REQD+=	c++11
+
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
 .  if ${OPSYS} == "NetBSD" || ${OPSYS} == "Darwin"
 # https://bugzilla.mozilla.org/show_bug.cgi?id=982693
 SUBST_CLASSES+=		clang

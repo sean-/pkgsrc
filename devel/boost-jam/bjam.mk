@@ -21,19 +21,19 @@ BJAM_ARGS+=		${BJAM_BUILD}
 .if !empty(PKGSRC_COMPILER:Mgcc)
 .  if !empty(CC_VERSION:Mgcc-4.[4-7]*)
 BJAM_ARGS+=		cxxflags=-std=c++0x
-CXXFLAGS+=		-std=c++0x
+CXX_REQD+=		c++0x
 .  elif !empty(CC_VERSION:Mgcc-4.[89]*)
 BJAM_ARGS+=		cxxflags=-std=c++11
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 .  elif !empty(CC_VERSION:Mgcc-5.[0-9]*)
 BJAM_ARGS+=		cxxflags=-std=c++14
-CXXFLAGS+=		-std=c++14
+CXX_REQD+=		c++14
 .  endif
 .endif
 
 .if !empty(PKGSRC_COMPILER:Mclang)
 BJAM_ARGS+=		cxxflags=-std=c++11
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 .  if !empty(OPSYS:MDarwin)
 BJAM_ARGS+=		cxxflags=-stdlib=libc++ linkflags=-stdlib=libc++
 .  endif

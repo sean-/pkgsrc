@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/gtksourceviewmm-3.2.0
 GNU_CONFIGURE=	yes
 USE_TOOLS+=	gmake perl pkg-config
 USE_LANGUAGES=	c c++
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 USE_LIBTOOL=	yes
 
 PKGCONFIG_OVERRIDE+=	gtksourceview/gtksourceviewmm-uninstalled.pc.in

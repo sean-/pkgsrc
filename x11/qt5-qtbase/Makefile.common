@@ -32,7 +32,7 @@
 BUILDLINK_TRANSFORM+=	opt:-ldl:${BUILDLINK_LDADD.dl:M*}
 
 USE_LANGUAGES=		c c++
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 USE_LIBTOOL=		yes
 USE_TOOLS+=		gmake perl:build pkg-config
 

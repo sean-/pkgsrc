@@ -33,8 +33,7 @@ MAKE_FLAGS+=		INCLUDE_FOR_TEST="-Ilib -Icli -Iexternals/simplecpp"
 CPPFLAGS+=		-I${BUILDLINK_PREFIX.tinyxml2}/include
 LDFLAGS+=		${COMPILER_RPATH_FLAG}${BUILDLINK_PREFIX.tinyxml2}/lib -L${BUILDLINK_PREFIX.tinyxml2}/lib -ltinyxml2
 
-# needs C++0x
-CXXFLAGS+=		-std=c++0x
+CXX_REQD+=		c++0x
 
 .include "../../mk/compiler.mk"
 .if !empty(CC_VERSION:Mgcc-4.[0-5]*) || !empty(CC_VERSION:Mgcc-3.*)

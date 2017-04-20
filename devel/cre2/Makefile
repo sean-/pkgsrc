@@ -16,8 +16,6 @@ CONFIGURE_ARGS+=	--enable-maintainer-mode
 USE_LIBTOOL=	yes
 USE_LANGUAGES+=	c c++
 USE_TOOLS+=	autoconf autoreconf automake gmake makeinfo
-# to avoid configure: error: test for RE2 header failed
-CXXFLAGS+=	-std=c++11
 
 INFO_FILES=	yes
 

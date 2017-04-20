@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_TOOLS+=	gmake pkg-config perl
 USE_LANGUAGES=	c c++
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 PKGCONFIG_OVERRIDE+=	goocanvas/goocanvasmm.pc.in
 

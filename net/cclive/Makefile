@@ -17,11 +17,7 @@ USE_LANGUAGES=		c++ c
 USE_TOOLS+=		pkg-config
 GNU_CONFIGURE=		yes
 
-.include "../../mk/compiler.mk"
-# GCC 4.4 and above needs this
-.if !empty(PKGSRC_COMPILER:Mgcc) && !empty(CC_VERSION:Mgcc-4.[4-9]*)
-CXXFLAGS+=		-std=c++0x
-.endif
+CXX_REQD+=		c++0x
 
 .include "../../net/libquvi/buildlink3.mk"
 .include "../../www/curl/buildlink3.mk"

@@ -28,9 +28,10 @@ CONFIGURE_ARGS+=	-openssl-linked
 
 CONFIGURE_ARGS+=	-iconv
 
+CXX_REQD+=		c++11
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11 -Wno-c++11-narrowing
+CXXFLAGS+=	-Wno-c++11-narrowing
 .  if empty(MACHINE_PLATFORM:MDarwin-*-*)
 CXXFLAGS+=	-D_GLIBCXX_USE_C99_FP_MACROS_DYNAMIC=1
 .  endif

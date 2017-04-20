@@ -14,7 +14,7 @@ LICENSE=	gnu-lgpl-v2.1
 ONLY_FOR_PLATFORM=	NetBSD-*-i386 NetBSD-*-x86_64
 
 GCC_REQD+=	4.8
-CXXFLAGS+=	-std=gnu++11
+CXX_REQD+=	gnu++11
 BUILDLINK_TRANSFORM.NetBSD+=	rm:-Werror
 
 GNU_CONFIGURE=	yes

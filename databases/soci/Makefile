@@ -13,12 +13,9 @@ LICENSE=	boost-license
 
 USE_CMAKE=	yes
 USE_LANGUAGES=	c c++
+CXX_REQD+=	gnu++11
 
 CMAKE_ARGS+=	-DSOCI_LIBDIR=lib
-
-.include "../../mk/bsd.prefs.mk"
-
-CXXFLAGS.Cygwin+=	-std=gnu++11
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS=${CXXFLAGS:Q}
 
 .include "options.mk"

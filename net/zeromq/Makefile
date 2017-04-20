@@ -23,15 +23,7 @@ PKGCONFIG_OVERRIDE+=	src/libzmq.pc.in
 
 TEST_TARGET=	check
 
-.include "../../mk/compiler.mk"
-
-.if !empty(CC_VERSION:Mgcc-*)
-CXXFLAGS+=	-std=gnu++0x
-.endif
-
-.if !empty(CC_VERSION:Mclang-*)
-CXXFLAGS+=	-std=gnu++11
-.endif
+CXX_REQD+=	gnu++11
 
 .if ${OPSYS} == "Linux" || ${OPSYS} == "SunOS"
 .include "../../devel/libuuid/buildlink3.mk"

@@ -10,8 +10,8 @@ COMMENT=	Library for accessing id tags in various media files
 LICENSE=	gnu-lgpl-v2.1 OR mpl-1.1
 
 USE_LANGUAGES=	c c++
-CXXFLAGS+=	-std=c++11
 GCC_REQD+=	4.7
+CXX_REQD+=	c++11
 
 USE_CMAKE=		YES
 CMAKE_ARGS=		-DWITH_MP4=ON -DWITH_ASF=ON

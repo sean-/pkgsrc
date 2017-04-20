@@ -42,9 +42,7 @@ CXXFLAGS+=	-fpermissive -fno-strength-reduce -fno-thread-jumps \
 CXXFLAGS+=	-march=i486
 .endif
 
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 INSTALLATION_DIRS=	share/examples/rtorrent
 

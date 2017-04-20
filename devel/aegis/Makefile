@@ -18,11 +18,7 @@ USE_LANGUAGES=		c c++
 USE_PKGLOCALEDIR=	yes
 USE_TOOLS+=		groff gsoelim msgfmt perl:run yacc patch:run
 
-.include "../../mk/bsd.prefs.mk"
-
-.if !empty(PKGSRC_COMPILER:Mgcc)
-CXXFLAGS+=	-std=gnu++0x
-.endif
+CXX_REQD+=	gnu++0x
 
 AEGIS_USER_UID?=	3
 AEGIS_USER_GID?=	3

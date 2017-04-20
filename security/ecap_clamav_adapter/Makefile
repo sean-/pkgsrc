@@ -15,7 +15,7 @@ USE_LANGUAGES=	c c++
 USE_LIBTOOL=	yes
 USE_TOOLS+=	pkg-config
 
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../security/clamav/buildlink3.mk"
 .include "../../www/libecap/buildlink3.mk"

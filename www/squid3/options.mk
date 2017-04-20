@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--enable-carp
 CONFIGURE_ARGS+=	--enable-ecap
 USE_TOOLS+=		pkg-config
 CHECK_WRKREF_SKIP+=	sbin/squid
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 .include "../../www/libecap/buildlink3.mk"
 .else
 CONFIGURE_ARGS+=	--disable-ecap

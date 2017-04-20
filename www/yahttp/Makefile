@@ -16,10 +16,7 @@ USE_LIBTOOL=	yes
 USE_LANGUAGES=	c c++
 USE_TOOLS+=	aclocal autoconf autoheader automake
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 pre-configure:
 	set -e; cd ${WRKSRC}; \

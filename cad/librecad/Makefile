@@ -18,8 +18,8 @@ USE_LANGUAGES=	c c++
 USE_TOOLS+=	pax pkg-config
 USE_LIBTOOL=	yes
 
-# package uses -std=c++11 flag
 GCC_REQD+=	4.7
+CXX_REQD+=	c++11
 
 SUBST_CLASSES+=		qtdir
 SUBST_STAGE.qtdir=	pre-configure

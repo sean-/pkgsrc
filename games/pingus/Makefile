@@ -14,16 +14,11 @@ BUILD_DEPENDS+=		scons>=0.96:../../devel/scons
 USE_LANGUAGES+=		c c++
 
 MAKE_JOBS?=	1
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-SCONS_CXX=	${CXX} -std=c++11
-.else
-SCONS_CXX=	${CXX}
-.endif
+CXX_REQD+=	c++11
 
 do-configure:
 	cd ${WRKSRC} && \
-	${PKGSRC_SETENV} ${MAKE_ENV} scons configure CXX=${SCONS_CXX:Q} CPPPATH=${PREFIX}/include LIBPATH=${PREFIX}/lib
+	${PKGSRC_SETENV} ${MAKE_ENV} scons configure CXX=${CXX:Q} CPPPATH=${PREFIX}/include LIBPATH=${PREFIX}/lib
 
 do-build:
 	cd ${WRKSRC} && \

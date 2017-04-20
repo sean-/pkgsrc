@@ -16,11 +16,7 @@ LICENSE=	mit
 USE_CMAKE=	yes
 USE_LANGUAGES+=	c c++
 GCC_REQD+=	4.7 # C++11
-
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 WRKSRC=		${WRKDIR}/EmulationStation-${DISTNAME}
 

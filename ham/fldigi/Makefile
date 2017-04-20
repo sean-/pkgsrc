@@ -42,9 +42,10 @@ CHECK_WRKREF_SKIP+=	bin/fldigi
 
 CONFIGURE_ENV.NetBSD+=	ac_cv_header_execinfo_h=no
 
+CXX_REQD+=	c++11
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11 -Wno-error=c++11-narrowing
+CXXFLAGS+=	-Wno-error=c++11-narrowing
 .endif
 
 .include "../../audio/libsamplerate/buildlink3.mk"

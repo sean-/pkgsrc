@@ -40,12 +40,7 @@ BUILDLINK_TRANSFORM+=	l:zlib:z
 PYTHON_VERSIONS_INCOMPATIBLE=	27
 REPLACE_PYTHON+=	src/Sigil/Resource_Files/plugin_launchers/python/*.py
 
-.include "../../mk/compiler.mk"
-# GCC 4.4 and above needs this
-.if !empty(PKGSRC_COMPILER:Mgcc) && !empty(CC_VERSION:Mgcc-4.[4-9]*)
-_WRAP_EXTRA_ARGS.CXX+=	-std=c++0x
-CWRAPPERS_APPEND.cxx+=	-std=c++0x
-.endif
+CXX_REQD+=	c++0x
 
 .include "../../textproc/xerces-c/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"

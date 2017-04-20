@@ -29,10 +29,7 @@ PATCHDIR=	${.CURDIR}/../../graphics/opencv/patches
 CMAKE_ARGS+=	-D WITH_FFMPEG=OFF
 CMAKE_ARGS+=	-D BUILD_DOCS=OFF
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=		-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 # jasper uses SIZE_MAX and friends in its headers.
 CXXFLAGS+=		-D__STDC_LIMIT_MACROS

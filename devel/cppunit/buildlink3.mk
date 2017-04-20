@@ -11,7 +11,7 @@ BUILDLINK_PKGSRCDIR.cppunit?=	../../devel/cppunit
 BUILDLINK_CPPFLAGS.cppunit+=	-I${BUILDLINK_PREFIX.cppunit}/include/cppunit
 .endif # CPPUNIT_BUILDLINK3_MK
 
-# cppunit enables C++11 so all dependencies must be built the same way
-CXXFLAGS+=		-std=c++11
+# cppunit enables C++11 so all dependencies must be built with at least that
+CXX_REQD+=		c++11
 
 BUILDLINK_TREE+=	-cppunit

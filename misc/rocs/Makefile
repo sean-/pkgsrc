@@ -9,10 +9,7 @@ COMMENT=	KDE graph theory IDE
 
 CMAKE_ARGS+=	-DKDE4_BUILD_TESTS:BOOL=OFF
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang) || !empty(PKGSRC_COMPILER:Mgcc)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../meta-pkgs/kde4/kde4.mk"
 

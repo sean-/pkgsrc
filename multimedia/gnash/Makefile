@@ -53,9 +53,6 @@ BUILDLINK_TRANSFORM+=	rm:-fvisibility-inlines-hidden
 .include "../../x11/libXi/buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../mk/bsd.pkg.mk"

@@ -45,6 +45,12 @@
 #	Valid values are: c, c99, c++, fortran, fortran77, java, objc,
 #	obj-c++, and ada.  The default is "c".
 #
+# CXX_REQD
+#	The minimum version of the C++ standard required.
+#
+#	Valid values are: c++0x gnu++0x c++11 gnu++11 c++14 gnu++14
+#	Default: empty
+#
 # The following variables are defined, and available for testing in
 # package Makefiles:
 #
@@ -154,6 +160,17 @@ PKG_LD?=       /usr/bin/ld
 ${_var_}:=	${${_var_}:C/^/_asdf_/1:M_asdf_*:S/^_asdf_//:T}
 .  else
 ${_var_}:=	${${_var_}:C/^/_asdf_/1:M_asdf_*:S/^_asdf_//:T} ${${_var_}:C/^/_asdf_/1:N_asdf_*}
+.  endif
+.endfor
+
+# If and when the flags differ between compilers we can push this down into
+# the respective mk/compiler/*.mk files.
+_CXX_REQD=
+.for _version_ in gnu++14 c++14 gnu++11 c++11 gnu++0x c++0x
+.  if empty(_CXX_REQD) && !empty(CXX_REQD:M${_version_})
+_CXX_REQD=		${_version_}
+_WRAP_EXTRA_ARGS.CXX+=	-std=${_CXX_REQD}
+CWRAPPERS_PREPEND.cxx+=	-std=${_CXX_REQD}
 .  endif
 .endfor
 

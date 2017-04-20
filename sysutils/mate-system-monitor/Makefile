@@ -12,7 +12,7 @@ TOOL_DEPENDS+=	itstool-[0-9]*:../../textproc/itstool
 TOOL_DEPENDS+=	libxml2-[0-9]*:../../textproc/libxml2 # for xmllint
 
 USE_LANGUAGES=	c c++
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../devel/glib2/schemas.mk"
 

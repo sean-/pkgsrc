@@ -20,7 +20,7 @@ USE_TOOLS+=		gmake pkg-config perl:run
 GNU_CONFIGURE=		yes
 PKGCONFIG_OVERRIDE+=	pango/pangomm.pc.in
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 BUILDLINK_API_DEPENDS.mm-common+=      mm-common>=0.9.10
 .include "../../devel/mm-common/buildlink3.mk"

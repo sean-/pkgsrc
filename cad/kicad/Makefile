@@ -53,7 +53,7 @@ SUBST_SED.netbsd5=	-e 's/fabsl/fabs/g'
 .if !empty(PKGSRC_COMPILER:Mclang)
 CXXFLAGS+=	-Wno-error=non-pod-varargs
 .endif
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../devel/swig/buildlink3.mk"
 .include "../../devel/boost-libs/buildlink3.mk"

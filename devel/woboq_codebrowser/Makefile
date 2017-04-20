@@ -25,9 +25,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/indexgenerator/codebrowser_indexgenerator ${DESTDIR}${PREFIX}/bin
 	cd ${WRKSRC}/data && pax -rwpp . ${DESTDIR}${PREFIX}/share/woboq_codebrowser
 
-.include "../../mk/bsd.prefs.mk"
-
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../lang/clang/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

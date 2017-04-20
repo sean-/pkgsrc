@@ -65,8 +65,9 @@ CONFIGURE_ENV+=	PYTHON=${PYTHONBIN}
 
 CXXFLAGS.SunOS+=	-fpermissive
 
+CXX_REQD+=	c++11
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11 -Wno-c++11-narrowing
+CXXFLAGS+=	-Wno-c++11-narrowing
 .endif
 
 .if !empty(MACHINE_PLATFORM:MSunOS-*-x86_64)

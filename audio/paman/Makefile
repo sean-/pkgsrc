@@ -17,7 +17,7 @@ USE_TOOLS+=	pkg-config gmake
 
 CONFIGURE_ARGS+=	--disable-lynx
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../devel/glibmm/buildlink3.mk"

@@ -20,7 +20,7 @@ MAKE_JOBS_SAFE=		no
 
 GCONF_SCHEMAS=		mlview.schemas
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 .include "../../devel/GConf/schemas.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"

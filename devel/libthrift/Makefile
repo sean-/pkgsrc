@@ -29,10 +29,12 @@ TEST_TARGET=	check
 pre-build:
 	${CHMOD} 0755 ${WRKSRC}/lib/erl/rebar
 
+CXX_REQD+=	c++11
+
 .include "../../mk/compiler.mk"
 
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11 -Wno-error=c++11-narrowing
+CXXFLAGS+=	-Wno-error=c++11-narrowing
 .endif
 
 .include "options.mk"

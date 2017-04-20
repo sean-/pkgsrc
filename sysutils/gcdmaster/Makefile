@@ -18,7 +18,7 @@ USE_TOOLS+=		pkg-config
 INSTALL_DIRS=		xdao
 GCONF_SCHEMAS=		gcdmaster.schemas
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 .include "../../devel/libsigc++/buildlink3.mk"
 .include "../../x11/gtkmm/buildlink3.mk"

@@ -16,7 +16,7 @@ USE_PKGLOCALEDIR=	yes
 GNU_CONFIGURE=		yes
 USE_TOOLS+=		autoconf gmake intltool msgfmt pkg-config
 USE_LANGUAGES=		c c++
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 CONFLICTS+=		gnome2-system-monitor-[0-9]*
 

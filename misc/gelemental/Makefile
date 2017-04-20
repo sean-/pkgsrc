@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_TOOLS+=	pkg-config intltool gmake msgfmt
 USE_LANGUAGES=	c c++
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 PKGCONFIG_OVERRIDE+=	data/libelemental.pc.in
 

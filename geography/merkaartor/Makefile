@@ -32,11 +32,7 @@ do-configure:
 		${QMAKE} ${CONFIGURE_ARGS} Merkaartor.pro && \
 		${MAKE} qmake
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-_WRAP_EXTRA_ARGS.CXX+=	-std=c++11
-CWRAPPERS_APPEND.cxx+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../devel/boost-headers/buildlink3.mk"
 .include "../../geography/gdal-lib/buildlink3.mk"

@@ -63,10 +63,7 @@ BUILDLINK_TRANSFORM+=	rm:-Werror
 USE_TOOLS+=		gmake
 .endif
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 PLIST_VARS+=		icons
 

@@ -18,8 +18,8 @@ USE_LIBTOOL=	yes
 USE_TOOLS+=	gmake pkg-config
 USE_LANGUAGES=	c c++
 
-# Boost qi.hpp
-CXXFLAGS+=	-std=c++0x
+# Boost qi.hpp.  XXX: bl3?
+CXX_REQD+=	-std=c++0x
 
 CONFIGURE_ARGS+=	--disable-tests
 CONFIGURE_ARGS+=	--without-docs

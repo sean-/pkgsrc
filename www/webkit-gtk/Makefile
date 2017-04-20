@@ -65,9 +65,10 @@ CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHONBIN}
 
 CXXFLAGS.SunOS+=	-fpermissive
 
+CXX_REQD+=	c++11
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11 -Wno-c++11-narrowing
+CXXFLAGS+=	-Wno-c++11-narrowing
 .endif
 
 .if !empty(MACHINE_PLATFORM:MSunOS-*-x86_64) || !empty(MACHINE_PLATFORM:MNetBSD-*-*arm*)

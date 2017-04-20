@@ -17,7 +17,7 @@ USE_TOOLS+=		pkg-config
 USE_PKGLOCALEDIR=	yes
 USE_LANGUAGES=		c c++
 
-CXXFLAGS+=		-std=c++11
+CXX_REQD+=		c++11
 
 PKGCONFIG_OVERRIDE+=	obby-0.4.pc.in
 

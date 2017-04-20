@@ -58,9 +58,7 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS=${OPENSSL_CFLAGS:Q}
 CONFIGURE_ENV+=	OPENSSL_LIBS=${OPENSSL_LIBS:Q}
 .endif
 
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../devel/libsigc++/buildlink3.mk"

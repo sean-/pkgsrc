@@ -15,7 +15,7 @@ DEPENDS+=	scons>=1.3:../../devel/scons
 USE_LANGUAGES=	c c++
 USE_TOOLS+=	pkg-config
 
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 INSTALLATION_DIRS=	${PKGMANDIR}/man1
 

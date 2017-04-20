@@ -25,10 +25,7 @@ BUILD_DEPENDS+=	zip-[0-9]*:../../archivers/zip
 
 PKGCONFIG_OVERRIDE+=	codeblocks.pc.in
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../databases/shared-mime-info/mimedb.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"

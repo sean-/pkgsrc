@@ -25,10 +25,7 @@ PKGCONFIG_OVERRIDE+=	libglog.pc.in
 LIBS+=		-lexecinfo
 .endif
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../devel/googletest/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

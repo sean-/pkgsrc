@@ -21,10 +21,7 @@ TEST_TARGET=	check
 TEXINFO_REQD=	4.0
 INFO_FILES=	yes
 
-.include "../../mk/compiler.mk"
-.if !empty(PKGSRC_COMPILER:Mclang)
-CXXFLAGS+=	-std=c++11
-.endif
+CXX_REQD+=	c++11
 
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

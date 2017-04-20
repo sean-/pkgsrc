@@ -24,9 +24,7 @@ DEPENDS+=	p5-Regexp-Common-[0-9]*:../../textproc/p5-Regexp-Common
 
 TEST_TARGET=	check
 
-.include "../../mk/bsd.prefs.mk"
-
-CXXFLAGS+=	-std=c++11
+CXX_REQD+=	c++11
 
 .include "../../lang/clang/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

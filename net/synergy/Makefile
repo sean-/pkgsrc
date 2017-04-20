@@ -54,12 +54,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DESTDIR}${PREFIX}/share/examples/${PKGBASE}
 .endfor
 
+CXX_REQD+=		c++11
 .include "../../mk/compiler.mk"
 .if !empty(PKGSRC_COMPILER:Mclang)
-_WRAP_EXTRA_ARGS.CXX+=	-std=c++11 -Wno-switch -Wno-unused	\
+_WRAP_EXTRA_ARGS.CXX+=	-Wno-switch -Wno-unused	\
 			-Wno-deprecated-register -Wno-tautological-compare \
 			-Wno-logical-op-parentheses -Wno-null-dereference
-CWRAPPERS_APPEND.cxx+=	-std=c++11 -Wno-switch -Wno-unused	\
+CWRAPPERS_APPEND.cxx+=	-Wno-switch -Wno-unused	\
 			-Wno-deprecated-register -Wno-tautological-compare \
 			-Wno-logical-op-parentheses -Wno-null-dereference
 .endif

@@ -14,8 +14,7 @@ HOMEPAGE=	http://www.libreoffice.org/
 COMMENT=	Office productivity suite from The Document Foundation
 LICENSE=	gnu-lgpl-v3
 
-# devel/cppunit/buildlink3.mk defined -std=c++11 and build fails
-BUILDLINK_TRANSFORM+=		opt:-std=c++11:-std=gnu++14
+CXX_REQD+=	gnu++14
 
 SUBST_CLASSES+=			use-bash
 SUBST_STAGE.use-bash=		pre-configure
