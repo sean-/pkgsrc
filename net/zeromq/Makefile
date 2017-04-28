@@ -25,6 +25,8 @@ TEST_TARGET=	check
 
 CXX_REQD+=	gnu++11
 
+.include "../../mk/bsd.prefs.mk"
+
 .if ${OPSYS} == "Linux" || ${OPSYS} == "SunOS"
 .include "../../devel/libuuid/buildlink3.mk"
 .endif
