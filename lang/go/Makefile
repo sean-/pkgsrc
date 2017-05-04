@@ -4,7 +4,7 @@
 
 DISTNAME=	go${GO_VERSION}.src
 PKGNAME=	go-${GO_VERSION}
-PKGREVISION=	2
+PKGREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	https://storage.googleapis.com/golang/
 
@@ -15,6 +15,7 @@ LICENSE=	modified-bsd
 
 WRKSRC=		${WRKDIR}/go
 USE_TOOLS+=	bash:run perl:run pax
+PKGSRC_USE_SSP= no
 
 # uses ulimit -T
 # BUILD_DEPENDS+=	bash>=4.2nb3:../../shells/bash
